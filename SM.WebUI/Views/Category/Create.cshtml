@@ -1,0 +1,143 @@
+﻿@model SMA.Core.Models.Category
+@{
+    ViewBag.Title = "Create";
+}
+
+<head>
+    @Styles.Render("~/Content/css")
+</head>
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Category</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<!--
+<html>
+<head>
+    <meta charset="utf-8">-->
+@*<link href="~/Content/login.css" rel="stylesheet" />*@
+<!--</head>
+
+
+<body style="padding: 0; margin: 0; color: #1a1f36; box-sizing: border-box; word-wrap: break-word; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif; min-height: 100%; background-color: #ffffff; ">
+
+    <div class="login-root" style="background: #fff; display: flex; width: 100%; min-height: 100vh; overflow: hidden;">
+
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh; flex-grow: 1; display: flex; box-sizing: border-box; -ms-flex-direction: column; flex-direction: column; ">
+
+            <div class="loginbackground box-background--white padding-top--64" style="min-height: 692px; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; overflow: hidden; background-color: #ffffff; padding-top: 64px; ">
+
+                <div class="loginbackground-gridContainer" style=" display: -ms-grid; display: grid; -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end]; grid-template-columns: [start] 1fr [left-gutter] repeat(16,86.6px) [left-gutter] 1fr [end]; -ms-grid-rows: [top] 1fr [top-gutter] (64px)[8] [bottom-gutter] 1fr [bottom]; grid-template-rows: [top] 1fr [top-gutter] repeat(8,64px) [bottom-gutter] 1fr [bottom]; justify-content: center; margin: 0 -2%; transform: rotate(-12deg) skew(-12deg);">
+
+                    <div class="box-root flex-flex" style="grid-area: top / start / 8 / end; box-sizing: border-box; display:flex">
+                        <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1; box-sizing: border-box; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5; box-sizing: border-box; display: flex;">
+                        <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1; box-sizing: border-box; box-shadow: inset 0 0 0 2px #e3e8ee; animation: animationLeftRight 2s ease-in-out infinite; animation: animationLeftRight 3s ease-in-out infinite; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2; box-sizing: border-box; display: flex; ">
+                        <div class="box-root box-background--blue800" style="flex-grow: 1; box-sizing: border-box; background-color: #212d63; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4; box-sizing: border-box; display: flex;">
+                        <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1; box-sizing: border-box; background-color: #5469d4; animation: animationLeftRight 2s ease-in-out infinite; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6; box-sizing: border-box; display: flex;">
+                        <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1; box-sizing: border-box; background-color: #e3e8ee; animation: animationLeftRight 2s ease-in-out infinite; animation: animationLeftRight 3s ease-in-out infinite; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end; box-sizing: border-box; display: flex;">
+                        <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1; box-sizing: border-box; background-color: #7fd3ed; animation: animationRightLeft 2s ease-in-out infinite; animation: animationLeftRight 4s ease-in-out infinite; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end; box-sizing: border-box; display: flex; ">
+                        <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1; box-sizing: border-box; background-color: #5469d4; animation: animationRightLeft 2s ease-in-out infinite; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20; box-sizing: border-box; display: flex;">
+                        <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1; box-sizing: border-box; background-color: #e3e8ee; animation: animationRightLeft 2s ease-in-out infinite; animation: animationLeftRight 4s ease-in-out infinite; ">
+                        </div>
+                    </div>
+
+                    <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17; box-sizing: border-box; display: flex;">
+                        <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1; box-sizing: border-box; box-shadow: inset 0 0 0 2px #e3e8ee; animation: animationRightLeft 2s ease-in-out infinite; animation: animationLeftRight 3s ease-in-out infinite; "></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9; box-sizing: border-box; padding-top: 24px; display: flex; -ms-flex-direction: column; flex-direction: column; ">
+
+                <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
+                     style="box-sizing: border-box; padding-top: 48px; padding-top: 24px; display: flex; -ms-flex-pack: center; justify-content: center;">
+                </div>
+
+
+                    <div class="formbg-outer" style="">
+
+                        <div class="formbg" style=" margin: 0px auto; width: 100%; max-width: 448px; background: white; border-radius: 4px; box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;">
+                            <div class="formbg-inner padding-horizontal--48" style="padding: 48px;">
+                                <h1 style="letter-spacing: -1px;">Add a New Category.</h1>
+
+                                <form id="stripe-login">
+
+                                    <div class="field padding-bottom--24" style=" padding-bottom: 24px;">
+                                        <div class="grid--50-50" style="display: grid; grid-template-columns: 50% 50%; align-items: center;">
+                                            <label for="Category">Category</label>
+                                        </div>
+                                        <input type="text" name="CategoryName"
+                                               style=" font-size: 16px; line-height: 28px; padding: 8px 16px; width: 100%; min-height: 44px; border: unset; border-radius: 4px; outline-color: rgb(84 105 212 / 0.5); background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;">
+                                    </div>
+
+
+                                    <div class="field padding-bottom--24" style=" padding-bottom: 24px;">
+                                        <input type="submit" value="Create"
+                                               style="font-size: 16px; line-height: 28px; padding: 8px 16px; width: 100%; min-height: 44px; border: unset; border-radius: 4px; outline-color: rgb(84 105 212 / 0.5); background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px; background-color: rgb(84, 105, 212); box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px; color: #fff; font-weight: 600; cursor: pointer;" />
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>-->

@@ -1,0 +1,17 @@
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.Service.dll.config
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.Service.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.Service.pdb
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\EntityFramework.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.Core.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.SQL.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.Core.pdb
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.SQL.pdb
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\SM.SQL.dll.config
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\EntityFramework.xml
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\obj\Debug\SM.Service.csproj.AssemblyReference.cache
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\obj\Debug\SM.Service.csproj.CoreCompileInputs.cache
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\obj\Debug\SM.Service.csproj.CopyComplete
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\obj\Debug\SM.Service.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Service\obj\Debug\SM.Service.pdb

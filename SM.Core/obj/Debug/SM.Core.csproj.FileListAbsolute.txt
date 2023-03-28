@@ -1,0 +1,6 @@
+C:\Users\TusharThakkar\source\repos\Social\SM.Core\bin\Debug\SM.Core.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Core\bin\Debug\SM.Core.pdb
+C:\Users\TusharThakkar\source\repos\Social\SM.Core\obj\Debug\SM.Core.csproj.AssemblyReference.cache
+C:\Users\TusharThakkar\source\repos\Social\SM.Core\obj\Debug\SM.Core.csproj.CoreCompileInputs.cache
+C:\Users\TusharThakkar\source\repos\Social\SM.Core\obj\Debug\SM.Core.dll
+C:\Users\TusharThakkar\source\repos\Social\SM.Core\obj\Debug\SM.Core.pdb

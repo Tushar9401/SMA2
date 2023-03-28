@@ -1,0 +1,100 @@
+﻿@model SM.Core.ViewModel.PostListViewModel
+
+@*@{
+        ViewBag.Title = "HomePage";
+    }*@
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Clean Blog - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+
+
+
+
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1>
+                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="col-md-2">
+    <h4>Filter by Category</h4>
+    <div class="list-group">
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
+        @foreach (var cat in Model.Categories)
+        {
+            @Html.ActionLink(cat.CategoryName, "Index", new { Category = cat.CategoryName }, new { @class = Request["Category"] == cat.CategoryName ? "list-group-item active" : "list-group-item" })
+        }
+    </div>
+</div>
+
+
+
+<div class="col-md-10">
+
+        @foreach (var item in Model.Posts)
+        {
+            <div class="col-md-12 text-center " style="width:100%; height:450px;padding:10px;margin:10px;border: solid thin black">
+                <div class="col-md-12">
+                    <img class="img-responsive center-block" style="width:auto;height:250px" src="~/Content/PostImages/@item.Image" />
+                </div>
+                <hr />
+                <div class="col-md-12">
+                    <strong>@Html.ActionLink(item.Title, "Details", new { id = item.Id })</strong>
+                </div>
+                <div class="col-md-12">
+                    <p>@item.Description</p>
+                </div>
+                <div class="col-md-12">
+                    <a href="" class="btn btn-default">Like</a>
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+@*<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+
+            @foreach (var item in Model.Posts)
+            {
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">@item.Title</h2>
+                        <h3 class="post-subtitle">Hello Des</h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="#!">Start Bootstrap</a>
+                        on September 24, 2022
+                    </p>
+                </div>
+            }
+        </div>
+    </div>*@
+</div>
+
+
+
+
