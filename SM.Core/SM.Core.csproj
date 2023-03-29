@@ -51,6 +51,7 @@
     <Compile Include="ViewModel\CommentViewModel.cs" />
     <Compile Include="ViewModel\PostListViewModel.cs" />
     <Compile Include="ViewModel\PostManagerViewModel.cs" />
+    <Compile Include="ViewModel\PostViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

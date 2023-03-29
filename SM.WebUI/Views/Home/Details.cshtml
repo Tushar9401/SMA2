@@ -1,8 +1,6 @@
-﻿@model  SM.Core.Models.Post
+﻿@model  SM.Core.ViewModel.PostViewModel.PostDetailsViewModel
 
-@{
-    ViewBag.Title = " Details";
-}
+
 
 
 
@@ -14,26 +12,26 @@
     <br />
 
     <div class="col-md-2">
-        <img class="img-responsive" src="~/Content/PostImages/@Model.Image" />
+        <img class="img-responsive" src="~/Content/PostImages/@Model.Post.Image" />
     </div>
     <div class="col-md-10">
         <dl class="dl-horizontal">
 
 
             <dt>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Post.Title)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Title)
+                @Html.DisplayFor(model => model.Post.Title)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.Post.Description)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Description)
+                @Html.DisplayFor(model => model.Post.Description)
             </dd>
 
 
@@ -41,10 +39,34 @@
             <dd>@Html.ActionLink("Back to List", "Index")</dd>
         </dl>
     </div>
-   
+     
+    <div class="card card-outline-secondary my-4">
+        <div class="card-header">
+            Post Reviews.
+        </div>
+    <div class="card-body">
+        @if(Model.Comments!=null && Model.Comments.Count>0)
+         {
+            foreach(var comment in Model.Comments)
+                {
+                  <p>@comment.Text</p>
+                  <small class="text-muted">
+                      Posted by @comment.UserID on @comment.TimeStamp
+                  </small>
+
+                  <hr/>
+                }
+         }
+         else
+         {
+            <p>There are No Comments on This Post.</p>
+         }
+
+    </div>
+    </div>
 
     <form id="commentForm">
-        <input type="text" name="PostID" value="@Model.Id" />
+        <input type="text" name="PostID" value="@Model.Post.Id" />
         <div class="form-group">
             <label>Write your Comment</label>
             <textarea class="form-control" rows="3" name="Text" placeholder="Write your comment"></textarea>

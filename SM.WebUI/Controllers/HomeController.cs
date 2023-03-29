@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using static SM.Core.ViewModel.PostViewModel;
 
 namespace SM.WebUI.Controllers
 {
@@ -18,6 +19,7 @@ namespace SM.WebUI.Controllers
         IRepository<Post> context;
         IRepository<Category> contextCategory;
         IRepository<Comment> commentContext;
+
         SharedServices services = new SharedServices();
 
         public HomeController(IRepository<Post> context, IRepository<Category> contextCategory)
@@ -59,15 +61,22 @@ namespace SM.WebUI.Controllers
 
         public ActionResult Details(string Id)
         {
-            Post post = context.Find(Id);
-            if (post == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                return View(post);
-            }
+           
+            //Post post = context.Find(Id);
+            //Comment comment = SharedServices.GetComments(Id);
+            //if (post == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //else
+            //{
+            //    return View(post);
+            //}
+            PostDetailsViewModel model = new PostDetailsViewModel();
+            model.Post = services.GetPostById(Id);
+            model.Comments = services.GetComments(Id);
+            return View(model);
+
         }
 
         [HttpPost]
