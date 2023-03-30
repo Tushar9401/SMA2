@@ -26,8 +26,15 @@ namespace SM.WebUI.Controllers
         // GET: ProductManager
         public ActionResult Index()
         {
-            List<Post> post = context.Collection().ToList();
-            return View(post);
+            //List<Post> post = context.Collection().ToList();
+            //return View(post);
+            List<Post> posts= context.Collection().ToList(); 
+            List<Category> categories = categoryContext.Collection().ToList();
+            PostListViewModel model = new PostListViewModel();
+
+            model.Posts = posts;
+            model.Categories = categories;
+            return View(model);
         }
 
         public ActionResult Create()
@@ -145,6 +152,8 @@ namespace SM.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        
         
     }
 }
