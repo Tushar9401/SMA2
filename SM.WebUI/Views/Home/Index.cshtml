@@ -94,6 +94,16 @@
 
 @model SM.Core.ViewModel.PostListViewModel
 <html class="js svg audio canvas cssremunit csscalc cssgradients supports no-touchevents video cssanimations cssfilters flexbox flexboxlegacy no-flexboxtweener flexwrap csstransforms csstransforms3d csstransitions backgroundblendmode cl-loaded" lang="en" style="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36">
+<div class="col-md-2">
+    <h4 style="color:white">Filter by Category</h4>
+    <div class="list-group">
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
+        @foreach (var cat in Model.Categories)
+        {
+            @Html.ActionLink(cat.CategoryName, "Index", new { Category = cat.CategoryName }, new { @class = Request["Category"] == cat.CategoryName ? "list-group-item active" : "list-group-item" })
+        }
+    </div>
+</div>
 <head>
 
     <meta charset="utf-8">
@@ -116,6 +126,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script nonce="f2efa029-ac1e-414a-b934-4dfb4d31c112">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
 </head>
+
 <body id="top" class="  pace-done" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="100">
     <div class="pace  pace-inactive">
         <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
@@ -190,6 +201,7 @@
                 </nav>
             </div>
         </header>
+
         <div class="pageheader-content row">
             <div class="col-full">
                 <div class="featured">
@@ -248,16 +260,18 @@
     </section>
 
     <section class="s-content">
-        @foreach (var item in Model.Posts)
-        {
-            <div class="row masonry-wrap">
-                <div class="masonry" style="position: relative; height: 3648.44px;">
-                    <div class="grid-sizer"></div>
 
+        <div class="row masonry-wrap">
+            <div class="masonry" style="position: relative; height: 3648.44px;">
+                <div class="grid-sizer"></div>
+                @foreach (var item in Model.Posts)
+                {
+                    //if (item.Image == null)
+                    //{
                     <article class="masonry__brick entry format-standard aos-init aos-animate" data-aos="fade-up">
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="entry__thumb-link">
-                                <img src="~/Content/PostImages/@item.Image" srcset="~/Content/PostImages/@item.Image 1x, ~/Content/PostImages/@item.Image 2x" alt="">
+                                <img src="~/Content/PostImages/@item.Image" srcset="~/Content/PostImages/@item.Image 0x, ~/Content/PostImages/@item.Image 0x" alt="">
                             </a>
                         </div>
                         <div class="entry__text">
@@ -274,34 +288,46 @@
                             </div>
                             <div class="entry__meta">
                                 <span class="entry__meta-links">
-                                    <a href="category.html">Design</a>
-                                    <a href="category.html">Photography</a>
+                                    <a href="category.html">@item.Category</a>
+
                                 </span>
                             </div>
                         </div>
                     </article>
+                    @*}*@
+                    @*else
+                        {
+                            <article class="masonry__brick entry format-quote aos-init aos-animate" data-aos="fade-up" style="position: absolute; left: 33.3333%; top: 0px;">
+                                <div class="entry__thumb">
+                                    <blockquote>
+                                        <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
+                                        <cite>Dieter Rams</cite>
+                                    </blockquote>
+                                </div>
+                            </article>
+                        }*@
+                }
+            </div>
+        </div>
 
-                </div>
+        <div class="row">
+            <div class="col-full">
+                <nav class="pgn">
+                    <ul>
+                        <li><a class="pgn__prev" href="#0">Prev</a></li>
+                        <li><a class="pgn__num" href="#0">1</a></li>
+                        <li><span class="pgn__num current">2</span></li>
+                        <li><a class="pgn__num" href="#0">3</a></li>
+                        <li><a class="pgn__num" href="#0">4</a></li>
+                        <li><a class="pgn__num" href="#0">5</a></li>
+                        <li><span class="pgn__num dots">…</span></li>
+                        <li><a class="pgn__num" href="#0">8</a></li>
+                        <li><a class="pgn__next" href="#0">Next</a></li>
+                    </ul>
+                </nav>
             </div>
-         }
-            <div class="row">
-                <div class="col-full">
-                    <nav class="pgn">
-                        <ul>
-                            <li><a class="pgn__prev" href="#0">Prev</a></li>
-                            <li><a class="pgn__num" href="#0">1</a></li>
-                            <li><span class="pgn__num current">2</span></li>
-                            <li><a class="pgn__num" href="#0">3</a></li>
-                            <li><a class="pgn__num" href="#0">4</a></li>
-                            <li><a class="pgn__num" href="#0">5</a></li>
-                            <li><span class="pgn__num dots">…</span></li>
-                            <li><a class="pgn__num" href="#0">8</a></li>
-                            <li><a class="pgn__next" href="#0">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
     <section class="s-extra">
         <div class="row top">
