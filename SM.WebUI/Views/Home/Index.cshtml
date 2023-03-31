@@ -259,8 +259,22 @@
         </div>
     </section>
 
+    <ul class="header__nav" style="background-color:black; align-content:center">
+        <li class="current"><a href="index.html" title="">Home</a></li>
+        <li class="has-children">
+            <a href="#0" title="">Categories</a>
+            <ul class="sub-menu">
+                <li>
+                    @Html.ActionLink("All", "Index", null, new { @class = Request["Category"]})
+                                @foreach (var cat in Model.Categories)
+                                {
+                                    @Html.ActionLink(cat.CategoryName, "Index", new { Category = cat.CategoryName })
+                                }
+                    </li>
+             </ul>
+        </li>
+    </ul>
     <section class="s-content">
-
         <div class="row masonry-wrap">
             <div class="masonry" style="position: relative; height: 3648.44px;">
                 <div class="grid-sizer"></div>
