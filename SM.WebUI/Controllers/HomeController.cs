@@ -19,6 +19,7 @@ namespace SM.WebUI.Controllers
         IRepository<Post> context;
         IRepository<Category> contextCategory;
         IRepository<Comment> commentContext;
+        IRepository<Likes> likesContext;
 
         SharedServices services = new SharedServices();
 
@@ -32,15 +33,16 @@ namespace SM.WebUI.Controllers
         {
             List<Post> posts;
             List<Category> categories = contextCategory.Collection().ToList();
-            if (option == "Title")
-            {
-                //Index action method will return a view with a student records based on what a user specify the value in textbox  
-                return View(db.Posts.Where(x => x.Title == search || search == null).ToList());
-            }
-            else if (option == "Category")
-            {
-                return View(db.Posts.Where(x => x.Category == search || search == null).ToList());
-            }
+           
+            //if (option == "Title")
+            //{
+            //    //Index action method will return a view with a student records based on what a user specify the value in textbox  
+            //    return View(db.Posts.Where(x => x.Title == search || search == null).ToList());
+            //}
+            //else if (option == "Category")
+            //{
+            //    return View(db.Posts.Where(x => x.Category == search || search == null).ToList());
+            //}
 
 
             if (category == null)
@@ -75,6 +77,7 @@ namespace SM.WebUI.Controllers
             PostDetailsViewModel model = new PostDetailsViewModel();
             model.Post = services.GetPostById(Id);
             model.Comments = services.GetComments(Id);
+           
             return View(model);
 
         }
@@ -91,6 +94,7 @@ namespace SM.WebUI.Controllers
                 //Getting Comment From FrontEnd
                 comment.Text = model.Text;
                 comment.PostID = model.PostID;
+                comment.Likes = model.Likes;
 
                 comment.UserID = User.Identity.GetUserId();
                 comment.TimeStamp = DateTime.Now;

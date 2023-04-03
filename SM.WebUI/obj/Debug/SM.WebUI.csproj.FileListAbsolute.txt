@@ -126,3 +126,6 @@ C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\obj\Debug\SM.WebUI.pdb
 C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\bin\SM.Service.dll
 C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\bin\SM.Service.pdb
 C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\bin\SM.Service.dll.config
+C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\obj\Debug\SM.WebUI.Migrations.Likes.resources
+C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\obj\Debug\SM.WebUI.csproj.GenerateResource.cache
+C:\Users\TusharThakkar\source\repos\Social\SM.WebUI\obj\Debug\SM.WebUI.Migrations.Likess.resources

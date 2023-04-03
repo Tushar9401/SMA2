@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -35,6 +37,18 @@ namespace SM.WebUI.Controllers
             model.Posts = posts;
             model.Categories = categories;
             return View(model);
+        }
+        public async Task<List<Post>> Edit(string id,bool like)
+        {
+            Post post =context.Find(id);
+            if(like)
+            {
+                post.NumberOfLikes++;
+            }
+
+            context.Update(post);
+            context.Commit(); 
+            return context.Collection().ToList();
         }
 
         public ActionResult Create()

@@ -13,6 +13,8 @@ namespace SM.Core.ViewModel
         {
             public Post Post { get; set; }
             public List<Comment> Comments { get; set; }
+
+            public Likes Like { get; set; }
         }
     }
 }

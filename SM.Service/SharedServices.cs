@@ -23,6 +23,13 @@ namespace SM.Service
              return context.SaveChanges() >0;
 
         }
+
+        public bool AddLikes(Likes likes)
+        {
+            DataContext context=new DataContext(); 
+            context.Likes.Add(likes);
+            return context.SaveChanges() >0;
+        }
         public List<Comment> GetComments(string PostID)
         {
             DataContext context = new DataContext();
@@ -36,5 +43,11 @@ namespace SM.Service
             return context.Posts.Find(PostID);
             
         }
+
+        //public int GetLikes(string PostID)
+        //{
+        //    DataContext context = new DataContext();
+        //    return context.Likes.Where(x=>x.PostID==PostID).Count();    
+        //}
     }
 }

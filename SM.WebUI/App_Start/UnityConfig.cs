@@ -1,9 +1,11 @@
 using SM.Core.Contracts;
 using SM.Core.Models;
 using SM.SQL;
+using SM.WebUI.Controllers;
 using System;
 using System.Threading;
 using Unity;
+using Unity.Injection;
 
 namespace SM.WebUI
 {
@@ -48,6 +50,9 @@ namespace SM.WebUI
             container.RegisterType<IRepository<Post>, SQLRepository<Post>>();
             container.RegisterType<IRepository<Category>, SQLRepository<Category>>();
             container.RegisterType<IRepository<Comment>, SQLRepository<Comment>>();
+            container.RegisterType<IRepository<Likes>, SQLRepository<Likes>>();
+
+            container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }

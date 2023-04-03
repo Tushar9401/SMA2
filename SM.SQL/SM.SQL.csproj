@@ -68,6 +68,18 @@
     <Compile Include="Migrations\202303280938146_CategoryCom.designer.cs">
       <DependentUpon>202303280938146_CategoryCom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304030534083_Likess.cs" />
+    <Compile Include="Migrations\202304030534083_Likess.designer.cs">
+      <DependentUpon>202304030534083_Likess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304030553134_AddLikeComments.cs" />
+    <Compile Include="Migrations\202304030553134_AddLikeComments.designer.cs">
+      <DependentUpon>202304030553134_AddLikeComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304030617407_Likeee.cs" />
+    <Compile Include="Migrations\202304030617407_Likeee.designer.cs">
+      <DependentUpon>202304030617407_Likeee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -94,6 +106,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303280938146_CategoryCom.resx">
       <DependentUpon>202303280938146_CategoryCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304030534083_Likess.resx">
+      <DependentUpon>202304030534083_Likess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304030553134_AddLikeComments.resx">
+      <DependentUpon>202304030553134_AddLikeComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304030617407_Likeee.resx">
+      <DependentUpon>202304030617407_Likeee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

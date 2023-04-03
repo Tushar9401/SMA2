@@ -21,5 +21,7 @@ namespace SM.Core.Models
         [DisplayName("Category")]
         public string Category { get; set; }
 
+        public int NumberOfLikes { get; set; }
+
     }
 }

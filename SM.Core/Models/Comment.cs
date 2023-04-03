@@ -15,6 +15,8 @@ namespace SM.Core.Models
 
         public string PostID { get; set; }
 
+        public string Likes { get; set; }
+
 
         //public int EntityID { get; set; }
 

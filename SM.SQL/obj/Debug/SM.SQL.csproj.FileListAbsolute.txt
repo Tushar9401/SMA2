@@ -17,3 +17,6 @@ C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.csproj.Genera
 C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.PostU.resources
 C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.CategoryComment.resources
 C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.CategoryCom.resources
+C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.Likess.resources
+C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.AddLikeComments.resources
+C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.Likeee.resources

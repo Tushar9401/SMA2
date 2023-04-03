@@ -196,6 +196,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304030527196_Likes.cs" />
+    <Compile Include="Migrations\202304030527196_Likes.designer.cs">
+      <DependentUpon>202304030527196_Likes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304030529371_Likess.cs" />
+    <Compile Include="Migrations\202304030529371_Likess.designer.cs">
+      <DependentUpon>202304030529371_Likess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -320,6 +329,14 @@
       <Project>{D6784F30-9836-462E-B0CD-E0AFBBE54CF4}</Project>
       <Name>SM.SQL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202304030527196_Likes.resx">
+      <DependentUpon>202304030527196_Likes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304030529371_Likess.resx">
+      <DependentUpon>202304030529371_Likess.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

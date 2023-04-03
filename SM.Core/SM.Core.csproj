@@ -46,9 +46,11 @@
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Likes.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CommentViewModel.cs" />
+    <Compile Include="ViewModel\LikesViewModel.cs" />
     <Compile Include="ViewModel\PostListViewModel.cs" />
     <Compile Include="ViewModel\PostManagerViewModel.cs" />
     <Compile Include="ViewModel\PostViewModel.cs" />

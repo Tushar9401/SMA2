@@ -1,41 +1,103 @@
 ﻿@model SM.WebUI.Models.RegisterViewModel
-@{
+<!--@{
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title.</h2>-->
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()*@
+    <!--<h4>Create a new account.</h4>
+    <hr />-->
+    @*@Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })*@
+        <!--</div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+    <div class="form-group">-->
+        @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })*@
+        <!--</div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+    <div class="form-group">-->
+        @*@Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })*@
+        <!--</div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />
         </div>
     </div>
-}
+}-->
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<DOCTYPE html>
+    <!-- Created By CodingLab - www.codinglabweb.com -->
+    <html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <!---<title> Responsive Registration Form | CodingLab </title>--->
+        <link rel="stylesheet" href="~/Content/UserRegistration/UserRegistration.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins',sans-serif; height: 100vh; display: flex; justify-content: center; align-items: center; padding: 10px; background: linear-gradient(135deg, #71b7e6, #FF4B2B); ">
+            <div class="container" style=" max-width: 800px; width: 100%; background-color: #fff; padding: 25px 30px; border-radius: 5px; box-shadow: 0 5px 10px rgba(0,0,0,0.15);">
+                <div class="title" style=" font-size: 25px; font-weight: 500; position: relative; background: linear-gradient(135deg, #71b7e6, #9b59b6); color: #fff;">Registration</div>
+                <br />
+                <div class="content">
+                    <form action="#">
+
+                        <div class="user-details" style="display: flex; flex-wrap: wrap; justify-content: space-between; margin: 20px 0 12px 0;">
+
+                            <div class="input-box" style="margin-bottom: 15px; width: calc(100% / 2 - 20px);">
+                                <span class="details" style="display: block; font-weight: 500; margin-bottom: 5px;">Email</span>
+                                <div class="input">
+                                    <input type="text" name="Email" required style=" height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;" />
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="input-box" style="margin-bottom: 10px; width: calc(100% /2 - 20px);">
+                                <span class="details" style="display: block; font-weight: 500; margin-bottom: 4px;">Password</span>
+                                <div class="input">
+                                    <input type="password" name="Password" required style=" height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;" />
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="input-box" style="margin-bottom: 15px; width: calc(100% / 2 - 20px);">
+                                <span class="details" style="display: block; font-weight: 500; margin-bottom: 5px;">Confirm Password</span>
+                                <div class="input">
+                                    <input type="password" name="ConfirmPassword" required style=" height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;" />
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                           
+                        </div>
+
+
+                        <div class="button" style="height: 45px; margin: 35px 0; border-radius: 5px; ">
+                            <input type="submit" value="Register" style=" height: 100%; width: 100%; border-radius: 5px; border: none; color: #fff; font-size: 18px; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(150deg, #71b7e6, #FF4B2B);" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </body>
+    }
+</html>

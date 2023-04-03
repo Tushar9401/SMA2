@@ -16,5 +16,6 @@ namespace SM.SQL
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Likes> Likes { get; set; }
     }
 }

@@ -293,7 +293,7 @@
                                 <div class="entry__date">
                                     <a href="single-standard.html">@item.createdAt.Date</a>
                                 </div>
-                                <h1 class="entry__title"><a href="single-standard.html">@item.Title</a></h1>
+                                <h1 class="entry__title">@*<a href="single-standard.html">@item.Title</a>*@<strong>@Html.ActionLink(item.Title, "Details", new { id = item.Id })</strong></h1>
                             </div>
                             <div class="entry__excerpt">
                                 <p>
@@ -306,6 +306,10 @@
 
                                 </span>
                             </div>
+                        </div>
+                        <div>
+                            @Html.DisplayFor(modelItem => item.NumberOfLikes);
+                            <button onclick="Edit(@item.Id,true)">Like</button>
                         </div>
                     </article>
                     @*}*@
@@ -544,3 +548,19 @@
 
 </body>
 </html>
+
+<script>
+    function Edit(id, like) {
+        $.ajax({
+            type: "POST",
+            data: { id: id, like: like },
+            url: 'Edit',
+        }).done(function (result) {
+            var html = ""
+            for (var i = 0; i < result.length; i++) {
+                html += '<tr><td>' + result[i].id + '</td><td>' + result[i].numberOfLikes + '</td><td>' + result[i].numberOfDislikes + '</td><td><button onclick="Edit(' + result[i].id + ',true)">Like</button><button onclick="Edit(' + result[i].id + ',false)">Dislike</button></td></tr>'
+            }
+            document.getElementById("s-content").innerHTML = html;
+        });
+    }
+</script>
