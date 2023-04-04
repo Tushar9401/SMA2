@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+
+    <h2>Admin Pages</h2>
+
+    <div class="col-md-6">
+        <h4>Product Management</h4>
+        <div class="list-group">
+            @Html.ActionLink("Categories", "Index", "Category", null, new { @class = "list-group-item" })
+            @Html.ActionLink("Post", "Index", "Post", null, new { @class = "list-group-item" })
+        </div>
+    </div>
+
+    @*<div class="col-md-6">
+        <h4>Order Management</h4>
+        <div class="list-group">
+            @Html.ActionLink("Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
+        </div>
+    </div>*@
+    <div class="col-md-12 clearfix"></div>
+

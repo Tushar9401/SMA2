@@ -54,8 +54,9 @@
                 @Html.DisplayFor(modelItem => item.NumberOfLikes)
             </td>
             <td id="likesForm">
-                <input type="text" name="PostID" value="@item.Id" />
-                <button id="btnLikes" type="button">Like</button>
+                @*<input type="text" name="PostID" value="@item.Id" />
+                <button id="btnLikes" type="button">Like</button>*@
+                <button onclick="Edit('@item.Id',true)">Like</button>
             </td>
 
             <td>
@@ -70,11 +71,11 @@
 
 <script>
 
-    @*function Edit(id,like) {
+    function Edit(id,like) {
             $.ajax({
                 type:"post",
                 data:{ id: id, like: like },
-                url:"@Url.Action("Edit","Index")"
+                url:'Likes'
             }).done(function (result) {
                 var html = ""
                 for (var i = 0; i < result.length; i++) {
@@ -82,8 +83,8 @@
                 }
                 document.getElementsByClassName("table").innerHTML = html;
             });
-        }*@
-     $("#btnLikes").click(function ()
+        }
+     @*$("#btnLikes").click(function ()
     {
         $.ajax({
             url: "@Url.Action("EditLikes","Index")",
@@ -100,6 +101,6 @@
         }).fail(function () {
             swal("Error!", "Error Occured.Please Try Again", "error")
         });
-    });
+    });*@
 
 </script>

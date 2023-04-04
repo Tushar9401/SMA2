@@ -25,7 +25,8 @@ namespace SM.WebUI.Controllers
             categoryContext = postcategorycontext;
         }
 
-        // GET: ProductManager
+        //GET: ProductManager
+        [Authorize(Roles ="Admin")]
         public ActionResult Index()
         {
             //List<Post> post = context.Collection().ToList();
@@ -38,18 +39,7 @@ namespace SM.WebUI.Controllers
             model.Categories = categories;
             return View(model);
         }
-        public async Task<List<Post>> Edit(string id,bool like)
-        {
-            Post post =context.Find(id);
-            if(like)
-            {
-                post.NumberOfLikes++;
-            }
-
-            context.Update(post);
-            context.Commit(); 
-            return context.Collection().ToList();
-        }
+      
 
         public ActionResult Create()
         {
@@ -84,56 +74,68 @@ namespace SM.WebUI.Controllers
 
             }
         }
-
-        public ActionResult Edit(string ID)
-        {
-            Post post = context.Find(ID);
-
-            if (post == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                PostManagerViewModel viewModel = new PostManagerViewModel();
-                viewModel.Post = new Post();
-                viewModel.categories = categoryContext.Collection();
-                return View(viewModel);
-            }
-        }
-
         [HttpPost]
-        public ActionResult Edit(Post post, string Id, HttpPostedFileBase file)
+        public async Task<List<Post>> Likes(string id, bool like)
         {
-            Post postToEdit = context.Find(Id);
-
-            if (postToEdit == null)
+            Post post = context.Find(id);
+            if (like)
             {
-                return HttpNotFound();
+                post.NumberOfLikes++;
             }
-            else
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View(post);
-                }
 
-                if (file != null)
-                {
-                    postToEdit.Image = postToEdit.Id + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + postToEdit.Image);
-                }
-
-
-                postToEdit.Description = post.Description;
-                postToEdit.Title = post.Title;
-                postToEdit.Category = post.Category;
-
-                context.Commit();
-
-                return RedirectToAction("Index");
-            }
+            context.Update(post);
+            context.Commit();
+            return context.Collection().ToList();
         }
+        //public ActionResult Edit(string ID)
+        //{
+        //    Post post = context.Find(ID);
+
+        //    if (post == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    else
+        //    {
+        //        PostManagerViewModel viewModel = new PostManagerViewModel();
+        //        viewModel.Post = new Post();
+        //        viewModel.categories = categoryContext.Collection();
+        //        return View(viewModel);
+        //    }
+        //}
+
+        //[HttpPost]
+        //public ActionResult Edit(Post post, string Id, HttpPostedFileBase file)
+        //{
+        //    Post postToEdit = context.Find(Id);
+
+        //    if (postToEdit == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    else
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View(post);
+        //        }
+
+        //        if (file != null)
+        //        {
+        //            postToEdit.Image = postToEdit.Id + Path.GetExtension(file.FileName);
+        //            file.SaveAs(Server.MapPath("//Content//ProductImages//") + postToEdit.Image);
+        //        }
+
+
+        //        postToEdit.Description = post.Description;
+        //        postToEdit.Title = post.Title;
+        //        postToEdit.Category = post.Category;
+
+        //        context.Commit();
+
+        //        return RedirectToAction("Index");
+        //    }
+        //}
         public ActionResult Delete(string ID)
         {
             Post postToDelete = context.Find(ID);

@@ -7,6 +7,7 @@ using SM.SQL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using static SM.Core.ViewModel.PostViewModel;
@@ -58,8 +59,19 @@ namespace SM.WebUI.Controllers
             model.Categories = categories;
             return View(model);
         }
+        [HttpPost]
+        public async Task<List<Post>> Edit(string id, bool like)
+        {
+            Post post = context.Find(id);
+            if (like)
+            {
+                post.NumberOfLikes++;
+            }
 
-
+            context.Update(post);
+            context.Commit();
+            return context.Collection().ToList();
+        }
 
         public ActionResult Details(string Id)
         {

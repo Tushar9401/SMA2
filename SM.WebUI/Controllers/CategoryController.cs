@@ -19,6 +19,7 @@ namespace SM.WebUI.Controllers
             context = Categorycontext;
         }
 
+        [Authorize(Roles="Admin")]
         public ActionResult Index()
         {
             List<Category> categories = context.Collection().ToList();

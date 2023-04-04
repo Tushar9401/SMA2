@@ -92,19 +92,19 @@
 
 
 
-@model SM.Core.ViewModel.PostListViewModel
-<html class="js svg audio canvas cssremunit csscalc cssgradients supports no-touchevents video cssanimations cssfilters flexbox flexboxlegacy no-flexboxtweener flexwrap csstransforms csstransforms3d csstransitions backgroundblendmode cl-loaded" lang="en" style="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36">
-<div class="col-md-2">
-    <h4 style="color:white">Filter by Category</h4>
-    <div class="list-group">
+@*@model SM.Core.ViewModel.PostListViewModel*@
+<!--<html class="js svg audio canvas cssremunit csscalc cssgradients supports no-touchevents video cssanimations cssfilters flexbox flexboxlegacy no-flexboxtweener flexwrap csstransforms csstransforms3d csstransitions backgroundblendmode cl-loaded" lang="en" style="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36">
+<div class="col-md-2">-->
+    @*<h4 style="color:white">Filter by Category</h4>*@
+    @*<div class="list-group">
         @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
         @foreach (var cat in Model.Categories)
         {
             @Html.ActionLink(cat.CategoryName, "Index", new { Category = cat.CategoryName }, new { @class = Request["Category"] == cat.CategoryName ? "list-group-item active" : "list-group-item" })
         }
-    </div>
-</div>
-<head>
+    </div>*@
+<!--</div>-->
+<!--<head>
 
     <meta charset="utf-8">
     <title>Philosophy</title>
@@ -115,13 +115,16 @@
 
     <link rel="stylesheet" href="~/Content/HomeIndex/base.css">
     <link rel="stylesheet" href="~/Content/HomeIndex/vendor.css">
-    <link rel="stylesheet" href="~/Content/HomeIndex/main.css">
+    <link rel="stylesheet" href="~/Content/HomeIndex/main.css">-->
+    @*<link rel="stylesheet" href="~/Content/HomeIndex/like.css" />*@
 
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="f2efa029-ac1e-414a-b934-4dfb4d31c112"></script>
+    <!--<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="f2efa029-ac1e-414a-b934-4dfb4d31c112"></script>
     <script defer="" referrerpolicy="origin" src="/cdn-cgi/zaraz/s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyUGhpbG9zb3BoeSUyMiUyQyUyMnglMjIlM0EwLjU5MTE0MzEzNzY1NzA3MDQlMkMlMjJ3JTIyJTNBMTkyMCUyQyUyMmglMjIlM0ExMDgwJTJDJTIyaiUyMiUzQTkzNyUyQyUyMmUlMjIlM0ExOTIwJTJDJTIybCUyMiUzQSUyMmh0dHBzJTNBJTJGJTJGcHJldmlldy5jb2xvcmxpYi5jb20lMkZ0aGVtZSUyRnBoaWxvc29waHklMkYlMjIlMkMlMjJyJTIyJTNBJTIyJTIyJTJDJTIyayUyMiUzQTI0JTJDJTIybiUyMiUzQSUyMlVURi04JTIyJTJDJTIybyUyMiUzQS0zMzAlMkMlMjJxJTIyJTNBJTVCJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIwJTIyJTJDJTIyVSUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMSUyMiUyQyUyMkElMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjIlMjIlMkMlMjItJTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIzJTIyJTJDJTIyMiUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyNCUyMiUyQyUyMjMlMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjUlMjIlMkMlMjI1JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjI2JTIyJTJDJTIyOCUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyNyUyMiUyQyUyMjElMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjglMjIlMkMlMjI1JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjI5JTIyJTJDJTIyNiUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMTAlMjIlMkMlMjI4JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIxMSUyMiUyQyUyMi0lMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjEyJTIyJTJDJTIyMSUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMTMlMjIlMkMlMjIzJTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTVEJTdE"></script>
     <script src="~/Content/HomeIndex/js/modernizr.js"></script>
     <script src="~/Content/HomeIndex/js/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script nonce="f2efa029-ac1e-414a-b934-4dfb4d31c112">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
@@ -156,18 +159,20 @@
                     <li>
                         <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                     </li>
-                </ul>
-                <a class="header__search-trigger" href="#0"></a>
-                <div class="header__search">
-                    <form role="search" method="get" class="header__search-form" action="#">
-                        <label>
-                            <span class="hide-content">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
-                        </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
-                    <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
-                </div>
+                </ul>-->
+                @*<a class="header__search-trigger" href="#0"></a>*@
+            <!--<div style=" font-family:  metropolis-semibold, sans-serif;
+                 font-size: 12px;
+                 text-transform: uppercase;
+                 letter-spacing: 2px;
+                 line-height: 21px;
+                 display: block;
+                 color: #FFFFFF;
+                 float: left;
+                
+                 margin-right:2px;">
+                <a href="@Html.ActionLink("LoginIN","Login","Account")">Login In</a>
+            </div>
                 <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
                 <nav class="header__nav-wrap">
                     <h2 class="header__nav-heading h6">Site Navigation</h2>
@@ -206,7 +211,7 @@
             <div class="col-full">
                 <div class="featured">
                     <div class="featured__column featured__column--big">
-                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-guitarman.jpg');">
+                        <div class="entry" style="background-image: url('https://www.shutterstock.com/image-photo/happy-young-man-dancing-playing-guitar-2248472047');">
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0">Music</a></span>
                                 <h1><a href="#0" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
@@ -223,7 +228,7 @@
                         </div>
                     </div>
                     <div class="featured__column featured__column--small">
-                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-watch.jpg');">
+                        <div class="entry" style="background-image:url("~/Content/HomeIndex/Images/featured-watch.jpg");>
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0">Management</a></span>
                                 <h1><a href="#0" title="">The Pomodoro Technique Really Works.</a></h1>
@@ -238,7 +243,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-beetle.jpg');">
+                        <div class="entry" style="background-image:url(~/Content/HomeIndex/Images/featured-watch.jpg);">
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0">LifeStyle</a></span>
                                 <h1><a href="#0" title="">Throwback To The Good Old Days.</a></h1>
@@ -264,67 +269,93 @@
         <li class="has-children">
             <a href="#0" title="">Categories</a>
             <ul class="sub-menu">
-                <li>
-                    @Html.ActionLink("All", "Index", null, new { @class = Request["Category"]})
+                <li>-->
+                    @*@Html.ActionLink("All", "Index", null, new { @class = Request["Category"]})
                                 @foreach (var cat in Model.Categories)
                                 {
                                     @Html.ActionLink(cat.CategoryName, "Index", new { Category = cat.CategoryName })
-                                }
-                    </li>
+                                }*@
+                    <!--</li>
              </ul>
         </li>
     </ul>
-    <section class="s-content">
+    <div class="col-md-10">
+    <section class="s-content col-md-12">
         <div class="row masonry-wrap">
-            <div class="masonry" style="position: relative; height: 3648.44px;">
-                <div class="grid-sizer"></div>
-                @foreach (var item in Model.Posts)
-                {
-                    //if (item.Image == null)
-                    //{
-                    <article class="masonry__brick entry format-standard aos-init aos-animate" data-aos="fade-up">
-                        <div class="entry__thumb">
-                            <a href="single-standard.html" class="entry__thumb-link">
-                                <img src="~/Content/PostImages/@item.Image" srcset="~/Content/PostImages/@item.Image 0x, ~/Content/PostImages/@item.Image 0x" alt="">
-                            </a>
-                        </div>
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <div class="entry__date">
-                                    <a href="single-standard.html">@item.createdAt.Date</a>
-                                </div>
-                                <h1 class="entry__title">@*<a href="single-standard.html">@item.Title</a>*@<strong>@Html.ActionLink(item.Title, "Details", new { id = item.Id })</strong></h1>
-                            </div>
-                            <div class="entry__excerpt">
-                                <p>
-                                    @item.Description
-                                </p>
-                            </div>
-                            <div class="entry__meta">
-                                <span class="entry__meta-links">
-                                    <a href="category.html">@item.Category</a>
+            <div class="masonry" style="position: relative; ">
+                <div class="grid-sizer"></div>-->
+                @*@foreach (var item in Model.Posts)
+        {*@
+                <!--//if (item.Image == null)
+    //{
+    <article class="masonry__brick entry format-standard aos-init aos-animate" data-aos="fade-up">
+        <div class="entry__thumb">
+            <a href="single-standard.html" class="entry__thumb-link">-->
+                @*<img src="~/Content/PostImages/@item.Image" srcset="~/Content/PostImages/@item.Image 0x, ~/Content/PostImages/@item.Image 0x" alt="">*@
+                <!--</a>
+    </div>
+    <div class="entry__text">
+        <div class="entry__header">
+            <div class="entry__date">
+                <a href="single-standard.html">-->
+                @*@item.createdAt.Date*@
+                <!--</a>
+    </div>
+    <h1 class="entry__title"><a href="single-standard.html">-->
+                @*@item.Title*@<!--</a><strong-->@*>@Html.ActionLink(item.Title, "Details", new { id = item.Id })<*@
+                <!--/strong></h1>
+    </div>
+    <div class="entry__excerpt">
+        <p>-->
+                @*@item.Description*@
+                <!--</p>
+    </div>
+    <div class="entry__meta">
+        <span class="entry__meta-links">
+            <a href="category.html">-->
+                @*@item.Category*@
+                <!--</a>
 
-                                </span>
-                            </div>
-                        </div>
-                        <div>
-                            @Html.DisplayFor(modelItem => item.NumberOfLikes);
-                            <button onclick="Edit(@item.Id,true)">Like</button>
-                        </div>
-                    </article>
-                    @*}*@
-                    @*else
-                        {
-                            <article class="masonry__brick entry format-quote aos-init aos-animate" data-aos="fade-up" style="position: absolute; left: 33.3333%; top: 0px;">
-                                <div class="entry__thumb">
-                                    <blockquote>
-                                        <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
-                                        <cite>Dieter Rams</cite>
-                                    </blockquote>
-                                </div>
-                            </article>
-                        }*@
-                }
+        </span>
+    </div>-->
+                @*<div class="like-button" onclick="Edit('@item.Id',true)">
+        <svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M320 1344q0-26-19-45t-45-19q-27 0-45.5 19t-18.5 45q0 27 18.5 45.5t45.5 18.5q26 0 45-18.5t19-45.5zm160-512v640q0 26-19 45t-45 19h-288q-26 0-45-19t-19-45v-640q0-26 19-45t45-19h288q26 0 45 19t19 45zm1184 0q0 86-55 149 15 44 15 76 3 76-43 137 17 56 0 117-15 57-54 94 9 112-49 181-64 76-197 78h-129q-66 0-144-15.5t-121.5-29-120.5-39.5q-123-43-158-44-26-1-45-19.5t-19-44.5v-641q0-25 18-43.5t43-20.5q24-2 76-59t101-121q68-87 101-120 18-18 31-48t17.5-48.5 13.5-60.5q7-39 12.5-61t19.5-52 34-50q19-19 45-19 46 0 82.5 10.5t60 26 40 40.5 24 45 12 50 5 45 .5 39q0 38-9.5 76t-19 60-27.5 56q-3 6-10 18t-11 22-8 24h277q78 0 135 57t57 135z" /></svg>
+         </div>*@
+                <!--<div class="bg-white" style="padding-top:20px;">
+                <div class="d-flex flex-row ">
+                    <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i>
+                    <span class="ml-1" onclick="Edit('',true)"style="padding:10px;">
+                        Like
+                        </span>
+                    </div>
+                    <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i>
+
+                    <span class="ml-1" style="padding:10px;">
+                        Comment
+                        </span>
+                    </div>
+                    <div class="like p-2 cursor"><i class="fa fa-share"></i>
+                    <span class="ml-1"style="padding:10px;">
+                        Share
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>-->
+                @*}*@
+                @*else
+        {
+            <article class="masonry__brick entry format-quote aos-init aos-animate" data-aos="fade-up" style="position: absolute; left: 33.3333%; top: 0px;">
+                <div class="entry__thumb">
+                    <blockquote>
+                        <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
+                        <cite>Dieter Rams</cite>
+                    </blockquote>
+                </div>
+            </article>
+        }*@
+                <!--}
             </div>
         </div>
 
@@ -345,222 +376,1038 @@
                 </nav>
             </div>
         </div>
-    </section>
+    </section>-->
+                @*</div>*@
 
-    <section class="s-extra">
-        <div class="row top">
-            <div class="col-eight md-six tab-full popular">
-                <h3>Popular Posts</h3>
-                <div class="block-1-2 block-m-full popular__posts">
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/wheel-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-19">Dec 19, 2017</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/shutterbug-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-18">Dec 18, 2017</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/cookies-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/beetle-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/tulips-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">10 Interesting Facts About Caffeine.</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-14">Dec 14, 2017</time></span>
-                        </section>
-                    </article>
-                    <article class="col-block popular__post">
-                        <a href="#0" class="popular__thumb">
-                            <img src="images/thumbs/small/salad-150.jpg" alt="">
-                        </a>
-                        <h5><a href="#0">Healthy Mediterranean Salad Recipes</a></h5>
-                        <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-12">Dec 12, 2017</time></span>
-                        </section>
-                    </article>
+                <!--<section class="s-extra">
+            <div class="row top">
+                <div class="col-eight md-six tab-full popular">
+                    <h3>Popular Posts</h3>
+                    <div class="block-1-2 block-m-full popular__posts">
+                        <article class="col-block popular__post">
+                            <a href="#0" class="popular__thumb">
+                                <img src="images/thumbs/small/wheel-150.jpg" alt="">
+                            </a>
+                            <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
+                            <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                                <span class="popular__date"><span>on</span> <time datetime="2017-12-19">Dec 19, 2017</time></span>
+                            </section>
+                        </article>
+                        <article class="col-block popular__post">
+                            <a href="#0" class="popular__thumb">
+                                <img src="images/thumbs/small/shutterbug-150.jpg" alt="">
+                            </a>
+                            <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
+                            <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                                <span class="popular__date"><span>on</span> <time datetime="2017-12-18">Dec 18, 2017</time></span>
+                            </section>
+                        </article>
+                        <article class="col-block popular__post">
+                            <a href="#0" class="popular__thumb">
+                                <img src="images/thumbs/small/cookies-150.jpg" alt="">
+                            </a>
+                            <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
+                            <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                                <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
+                            </section>
+                        </article>
+                        <article class="col-block popular__post">
+                            <a href="#0" class="popular__thumb">
+                                <img src="images/thumbs/small/beetle-150.jpg" alt="">
+                            </a>
+                            <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
+                            <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                                <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
+                            </section>
+                        </article>
+                        <article class="col-block popular__post">
+                            <a href="#0" class="popular__thumb">
+                                <img src="images/thumbs/small/tulips-150.jpg" alt="">
+                            </a>
+                            <h5><a href="#0">10 Interesting Facts About Caffeine.</a></h5>
+                            <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                                <span class="popular__date"><span>on</span> <time datetime="2017-12-14">Dec 14, 2017</time></span>
+                            </section>
+                        </article>
+                        <article class="col-block popular__post">
+                            <a href="#0" class="popular__thumb">
+                                <img src="images/thumbs/small/salad-150.jpg" alt="">
+                            </a>
+                            <h5><a href="#0">Healthy Mediterranean Salad Recipes</a></h5>
+                            <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                                <span class="popular__date"><span>on</span> <time datetime="2017-12-12">Dec 12, 2017</time></span>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-four md-six tab-full about">
+                    <h3>About Philosophy</h3>
+                    <p>
+                        Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
+                    </p>
+                    <ul class="about__social">
+                        <li>
+                            <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-four md-six tab-full about">
-                <h3>About Philosophy</h3>
-                <p>
-                    Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-                </p>
-                <ul class="about__social">
-                    <li>
-                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                    </li>
+            <div class="row bottom tags-wrap">
+                <div class="col-full tags">
+                    <h3>Tags</h3>
+                    <div class="tagcloud">
+                        <a href="#0">Salad</a>
+                        <a href="#0">Recipe</a>
+                        <a href="#0">Places</a>
+                        <a href="#0">Tips</a>
+                        <a href="#0">Friends</a>
+                        <a href="#0">Travel</a>
+                        <a href="#0">Exercise</a>
+                        <a href="#0">Reading</a>
+                        <a href="#0">Running</a>
+                        <a href="#0">Self-Help</a>
+                        <a href="#0">Vacation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="s-footer">
+            <div class="s-footer__main">
+                <div class="row">
+                    <div class="col-two md-four mob-full s-footer__sitelinks">
+                        <h4>Quick Links</h4>
+                        <ul class="s-footer__linklist">
+                            <li><a href="#0">Home</a></li>
+                            <li><a href="#0">Blog</a></li>
+                            <li><a href="#0">Styles</a></li>
+                            <li><a href="#0">About</a></li>
+                            <li><a href="#0">Contact</a></li>
+                            <li><a href="#0">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-two md-four mob-full s-footer__archives">
+                        <h4>Archives</h4>
+                        <ul class="s-footer__linklist">
+                            <li><a href="#0">January 2018</a></li>
+                            <li><a href="#0">December 2017</a></li>
+                            <li><a href="#0">November 2017</a></li>
+                            <li><a href="#0">October 2017</a></li>
+                            <li><a href="#0">September 2017</a></li>
+                            <li><a href="#0">August 2017</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-two md-four mob-full s-footer__social">
+                        <h4>Social</h4>
+                        <ul class="s-footer__linklist">
+                            <li><a href="#0">Facebook</a></li>
+                            <li><a href="#0">Instagram</a></li>
+                            <li><a href="#0">Twitter</a></li>
+                            <li><a href="#0">Pinterest</a></li>
+                            <li><a href="#0">Google+</a></li>
+                            <li><a href="#0">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-five md-full end s-footer__subscribe">
+                        <h4>Our Newsletter</h4>
+                        <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
+                        <div class="subscribe-form">
+                            <form id="mc-form" class="group" novalidate="true">
+                                <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                                <input type="submit" name="subscribe" value="Send">
+                                <label for="mc-email" class="subscribe-message"></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="s-footer__bottom">
+                <div class="row">
+                    <div class="col-full">
+                        <div class="s-footer__copyright">
+                            <span>© Copyright Philosophy 2018</span>
+                            <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                        </div>
+                        <div class="go-top">
+                            <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="preloader" style="display: none;">
+            <div id="loader" style="display: none;">
+                <div class="line-scale">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-23581568-13');
+        </script>
+        <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon="{&quot;rayId&quot;:&quot;7affe0dfde92f3e1&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2023.3.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+
+    </body>
+    </html>
+
+    <script>
+        function Edit(id, like) {
+            $.ajax({
+                type: "post",
+                data: { id: id, like: like },
+                url: '/Home/Edit'
+            }).done(function (result) {
+                var html = ""
+                for (var i = 0; i < result.length; i++) {
+                    html += '<tr><td>' + result[i].id + '</td><td>' + result[i].numberOfLikes + '</td><td><button onclick="Edit(' + result[i].id + ',true)">Like</button></td></tr>'
+                }
+                document.getElementsByClassName("s-content").innerHTML = html;
+            });
+        }
+    </script>-->
+
+
+            <html lang="zxx" class="no-js" style="display: block;">
+            <head>
+
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+                <link rel="shortcut icon" href="img/fav.png">
+
+                <meta name="author" content="colorlib">
+
+                <meta name="description" content="">
+
+                <meta name="keywords" content="">
+
+                <meta charset="UTF-8">
+
+                <title>Magazine</title>
+                <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+                <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/linearicons.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/font-awesome.min.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/bootstrap.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/magnific-popup.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/nice-select.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/animate.min.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/owl.carousel.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/jquery-ui.css">
+                <link rel="stylesheet" href="~/Content/HomeIndexx/main.css">
+
+                <script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/fa7eb95c/www-widgetapi.vflset/www-widgetapi.js" async=""></script>
+                <script defer="" referrerpolicy="origin" src="/cdn-cgi/zaraz/s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyTWFnYXppbmUlMjIlMkMlMjJ4JTIyJTNBMC4xNzg1MjAzNTQxMDU3ODYyNiUyQyUyMnclMjIlM0ExOTIwJTJDJTIyaCUyMiUzQTEwODAlMkMlMjJqJTIyJTNBOTM3JTJDJTIyZSUyMiUzQTE5MjAlMkMlMjJsJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZwcmV2aWV3LmNvbG9ybGliLmNvbSUyRnRoZW1lJTJGbWFnYXppbmUlMkYlMjIlMkMlMjJyJTIyJTNBJTIyJTIyJTJDJTIyayUyMiUzQTI0JTJDJTIybiUyMiUzQSUyMlVURi04JTIyJTJDJTIybyUyMiUzQS0zMzAlMkMlMjJxJTIyJTNBJTVCJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIwJTIyJTJDJTIyVSUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMSUyMiUyQyUyMkElMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjIlMjIlMkMlMjItJTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIzJTIyJTJDJTIyMiUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyNCUyMiUyQyUyMjMlMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjUlMjIlMkMlMjI1JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjI2JTIyJTJDJTIyOCUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyNyUyMiUyQyUyMjElMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjglMjIlMkMlMjI1JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjI5JTIyJTJDJTIyNiUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMTAlMjIlMkMlMjI4JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIxMSUyMiUyQyUyMi0lMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjEyJTIyJTJDJTIyMSUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMTMlMjIlMkMlMjIzJTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTVEJTdE"></script>
+                <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9"></script>
+                <script src="//www.youtube.com/iframe_api"></script>
+                <script nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+                <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/52/6/common.js" nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9"></script>
+                <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/52/6/util.js" nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9"></script>
+            </head>
+            <body style="display: block;">
+                <header>
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
+                                    <ul style="margin-left:20px;">
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
+                                    <ul>
+                                        <li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>Login In</span></a></li>
+                                        <li><a href=""><span class="lnr lnr-envelope"></span><span></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-wrap">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
+                                    <a href="index.html">
+                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/af0941ba06185e9846af909ba9350baf--letter-b-logo-b-logo-design.jpg"  style="width:100px;"alt="">
+                                    </a>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
+                                    <img class="img-fluid" src="img/banner-ad.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container main-menu" id="main-menu">
+                        <button type="button" id="mobile-nav-toggle"><i class="lnr lnr-menu"></i><span class="menu-title">Menu</span> </button>
+                        <div class="row align-items-center justify-content-between">
+                            <nav id="nav-menu-container">
+                                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                                    <li class="menu-active"><a href="index.html">Home</a></li>
+                                    <li><a href="archive.html">Archive</a></li>
+                                    <li><a href="category.html">Category</a></li>
+                                    <li class="menu-has-children">
+                                        <a href="" class="sf-with-ul">Post Types</a>
+                                        <ul style="display: none;">
+                                            <li><a href="standard-post.html">Standard Post</a></li>
+                                            <li><a href="image-post.html">Image Post</a></li>
+                                            <li><a href="gallery-post.html">Gallery Post</a></li>
+                                            <li><a href="video-post.html">Video Post</a></li>
+                                            <li><a href="audio-post.html">Audio Post</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <div class="navbar-right">
+                                <form class="Search">
+                                    <input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
+                                    <label for="Search-box" class="Search-box-label">
+                                        <span class="lnr lnr-magnifier"></span>
+                                    </label>
+                                    <span class="Search-close">
+                                        <span class="lnr lnr-cross"></span>
+                                    </span>
+                                </form>
+                            </div>
+                        </div>
+                        <nav id="mobile-nav">
+                            <ul class="" style="touch-action: pan-y;" id="">
+                                <li class="menu-active"><a href="index.html">Home</a></li>
+                                <li><a href="archive.html">Archive</a></li>
+                                <li><a href="category.html">Category</a></li>
+                                <li class="menu-has-children">
+                                    <i class="lnr lnr-chevron-down"></i><a href="" class="sf-with-ul">Post Types</a>
+                                    <ul style="display: none;">
+                                        <li><a href="standard-post.html">Standard Post</a></li>
+                                        <li><a href="image-post.html">Image Post</a></li>
+                                        <li><a href="gallery-post.html">Gallery Post</a></li>
+                                        <li><a href="video-post.html">Video Post</a></li>
+                                        <li><a href="audio-post.html">Audio Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav><div id="mobile-body-overly"></div>
+                    </div>
+                </header>
+                <div class="site-main-container">
+
+                    <section class="top-post-area pt-10">
+                        <div class="container no-padding">
+                            <div class="row small-gutters">
+                                <div class="col-lg-8 top-post-left">
+                                    <div class="feature-image-thumb relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        @*<img class="img-fluid" src="" alt="">*@
+                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/top-post1.jpg"/>
+                                    </div>
+                                    <div class="top-post-details">
+                                        <ul class="tags">
+                                            <li><a href="#">Food Habit</a></li>
+                                        </ul>
+                                        <a href="image-post.html">
+                                            <h3>A Discount Toner Cartridge Is Better Than Everrrr.</h3>
+                                        </a>
+                                        <ul class="meta">
+                                            <li><a href="#"><span class="fas fa-user-alt" style="padding:4px"></span>Mark wiens</a></li>
+                                            <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                            <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 top-post-right">
+                                    <div class="single-top-post">
+                                        <div class="feature-image-thumb relative">
+                                            <div class="overlay overlay-bg"></div>
+                                            <img class="img-fluid" src="~/Content/HomeIndexx/img/top-post2.jpg" alt="">
+                                        </div>
+                                        <div class="top-post-details">
+                                            <ul class="tags">
+                                                <li><a href="#">Food Habit</a></li>
+                                            </ul>
+                                            <a href="image-post.html">
+                                                <h4>A Discount Toner Cartridge Is Better Than Ever.</h4>
+                                            </a>
+                                            <ul class="meta">
+                                                <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="single-top-post mt-10">
+                                        <div class="feature-image-thumb relative">
+                                            <div class="overlay overlay-bg"></div>
+                                            <img class="img-fluid" src="~/Content/HomeIndexx/img/top-post3.jpg" alt="">
+                                        </div>
+                                        <div class="top-post-details">
+                                            <ul class="tags">
+                                                <li><a href="#">Food Habit</a></li>
+                                            </ul>
+                                            <a href="image-post.html">
+                                                <h4>A Discount Toner Cartridge Is Better</h4>
+                                            </a>
+                                            <ul class="meta">
+                                                <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="news-tracker-wrap">
+                                        <h6><span>Breaking News:</span> <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="latest-post-area pb-120">
+                        <div class="container no-padding">
+                            <div class="row">
+                                <div class="col-lg-8 post-list">
+
+                                    <div class="latest-post-wrap">
+                                        <h4 class="cat-title">Latest News</h4>
+
+                                        @foreach (var item in Model.Posts)
+                                        { 
+                                    <div class="single-latest-post row align-items-center">
+                                        <div class="col-lg-5 post-left">
+                                            <div class="feature-img relative">
+                                                <div class="overlay overlay-bg"></div>
+                                                <img class="img-fluid" src="~/Content/PostImages/@item.Image" alt="">
+                                            </div>
+                                            <ul class="tags">
+                                                <li><a href="#">@item.Category</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-7 post-right">
+                                            <a href="image-post.html">
+                                                <h4>
+                                                    @item.Title
+                                                </h4>
+                                            </a>
+                                            <ul class="meta">
+                                                <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                            </ul>
+                                            <p class="excert">
+                                               @item.Description
+                                            </p>
+                                        </div>
+                                    </div>
+                                    }
+                                        @*<div class="single-latest-post row align-items-center">
+            <div class="col-lg-5 post-left">
+                <div class="feature-img relative">
+                    <div class="overlay overlay-bg"></div>
+                    <img class="img-fluid" src="~/Content/HomeIndexx/img/l2.jpg" alt="">
+                </div>
+                <ul class="tags">
+                    <li><a href="#">Science</a></li>
                 </ul>
             </div>
-        </div>
-        <div class="row bottom tags-wrap">
-            <div class="col-full tags">
-                <h3>Tags</h3>
-                <div class="tagcloud">
-                    <a href="#0">Salad</a>
-                    <a href="#0">Recipe</a>
-                    <a href="#0">Places</a>
-                    <a href="#0">Tips</a>
-                    <a href="#0">Friends</a>
-                    <a href="#0">Travel</a>
-                    <a href="#0">Exercise</a>
-                    <a href="#0">Reading</a>
-                    <a href="#0">Running</a>
-                    <a href="#0">Self-Help</a>
-                    <a href="#0">Vacation</a>
-                </div>
+            <div class="col-lg-7 post-right">
+                <a href="image-post.html">
+                    <h4>
+                        A Discount Toner Cartridge Is
+                        Better Than Ever.
+                    </h4>
+                </a>
+                <ul class="meta">
+                    <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                    <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                    <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                </p>
             </div>
-        </div>
-    </section>
+        </div>*@
+                                        @*<div class="single-latest-post row align-items-center">
+            <div class="col-lg-5 post-left">
+                <div class="feature-img relative">
+                    <div class="overlay overlay-bg"></div>
+                    <img class="img-fluid" src="~/Content/HomeIndexx/img/l3.jpg" alt="">
+                </div>
+                <ul class="tags">
+                    <li><a href="#">Travel</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 post-right">
+                <a href="image-post.html">
+                    <h4>
+                        A Discount Toner Cartridge Is
+                        Better Than Ever.
+                    </h4>
+                </a>
+                <ul class="meta">
+                    <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                    <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                    <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                </p>
+            </div>
+        </div>*@
+                                        @*<div class="single-latest-post row align-items-center">
+            <div class="col-lg-5 post-left">
+                <div class="feature-img relative">
+                    <div class="overlay overlay-bg"></div>
+                    <img class="img-fluid" src="~/Content/HomeIndexx/img/l4.jpg" alt="">
+                </div>
+                <ul class="tags">
+                    <li><a href="#">Fashion</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 post-right">
+                <a href="image-post.html">
+                    <h4>
+                        A Discount Toner Cartridge Is
+                        Better Than Ever.
+                    </h4>
+                </a>
+                <ul class="meta">
+                    <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                    <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                    <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                </p>
+            </div>
+        </div>*@
+                                    </div>
 
-    <footer class="s-footer">
-        <div class="s-footer__main">
-            <div class="row">
-                <div class="col-two md-four mob-full s-footer__sitelinks">
-                    <h4>Quick Links</h4>
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">Home</a></li>
-                        <li><a href="#0">Blog</a></li>
-                        <li><a href="#0">Styles</a></li>
-                        <li><a href="#0">About</a></li>
-                        <li><a href="#0">Contact</a></li>
-                        <li><a href="#0">Privacy Policy</a></li>
-                    </ul>
+
+                                    <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/banner-ad.jpg" alt="">
+                                    </div>
+
+
+                                    <div class="popular-post-wrap">
+                                        <h4 class="title">Popular Posts</h4>
+                                        <div class="feature-post relative">
+                                            <div class="feature-img relative">
+                                                <div class="overlay overlay-bg"></div>
+                                                <img class="img-fluid" src="~/Content/HomeIndexx/img/f1.jpg" alt="">
+                                            </div>
+                                            <div class="details">
+                                                <ul class="tags">
+                                                    <li><a href="#">Food Habit</a></li>
+                                                </ul>
+                                                <a href="image-post.html">
+                                                    <h3>A Discount Toner Cartridge Is Better Than Ever.</h3>
+                                                </a>
+                                                <ul class="meta">
+                                                    <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                    <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                    <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-20 medium-gutters">
+                                            <div class="col-lg-6 single-popular-post">
+                                                <div class="feature-img-wrap relative">
+                                                    <div class="feature-img relative">
+                                                        <div class="overlay overlay-bg"></div>
+                                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/f2.jpg" alt="">
+                                                    </div>
+                                                    <ul class="tags">
+                                                        <li><a href="#">Travel</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h4>
+                                                            A Discount Toner Cartridge Is
+                                                            Better Than Ever.
+                                                        </h4>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06 </a></li>
+                                                    </ul>
+                                                    <p class="excert">
+                                                        Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 single-popular-post">
+                                                <div class="feature-img-wrap relative">
+                                                    <div class="feature-img relative">
+                                                        <div class="overlay overlay-bg"></div>
+                                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/f3.jpg" alt="">
+                                                    </div>
+                                                    <ul class="tags">
+                                                        <li><a href="#">Travel</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h4>
+                                                            A Discount Toner Cartridge Is
+                                                            Better Than Ever.
+                                                        </h4>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06 </a></li>
+                                                    </ul>
+                                                    <p class="excert">
+                                                        Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="relavent-story-post-wrap mt-30">
+                                        <h4 class="title">Relavent Stories</h4>
+                                        <div class="relavent-story-list-wrap">
+                                            <div class="single-relavent-post row align-items-center">
+                                                <div class="col-lg-5 post-left">
+                                                    <div class="feature-img relative">
+                                                        <div class="overlay overlay-bg"></div>
+                                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/r1.jpg" alt="">
+                                                    </div>
+                                                    <ul class="tags">
+                                                        <li><a href="#">Lifestyle</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-7 post-right">
+                                                    <a href="image-post.html">
+                                                        <h4>
+                                                            A Discount Toner Cartridge Is
+                                                            Better Than Ever.
+                                                        </h4>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                                    </ul>
+                                                    <p class="excert">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            @*<div class="single-relavent-post row align-items-center">
+                                                <div class="col-lg-5 post-left">
+                                                    <div class="feature-img relative">
+                                                        <div class="overlay overlay-bg"></div>
+                                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/r2.jpg" alt="">
+                                                    </div>
+                                                    <ul class="tags">
+                                                        <li><a href="#">Science</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-7 post-right">
+                                                    <a href="image-post.html">
+                                                        <h4>
+                                                            A Discount Toner Cartridge Is
+                                                            Better Than Ever.
+                                                        </h4>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                                    </ul>
+                                                    <p class="excert">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                                    </p>
+                                                </div>
+                                            </div>*@
+                                            @*<div class="single-relavent-post row align-items-center">
+                                                <div class="col-lg-5 post-left">
+                                                    <div class="feature-img relative">
+                                                        <div class="overlay overlay-bg"></div>
+                                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/r3.jpg" alt="">
+                                                    </div>
+                                                    <ul class="tags">
+                                                        <li><a href="#">Travel</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-7 post-right">
+                                                    <a href="image-post.html">
+                                                        <h4>
+                                                            A Discount Toner Cartridge Is
+                                                            Better Than Ever.
+                                                        </h4>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06 Comments</a></li>
+                                                    </ul>
+                                                    <p class="excert">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                                    </p>
+                                                </div>
+                                            </div>*@
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="sidebars-area">
+                                        <div class="single-sidebar-widget editors-pick-widget">
+                                            <h6 class="title">Editor’s Pick</h6>
+                                            <div class="editors-pick-post">
+                                                <div class="feature-img-wrap relative">
+                                                    <div class="feature-img relative">
+                                                        <div class="overlay overlay-bg"></div>
+                                                        <img class="img-fluid" src="~/Content/HomeIndexx/img/e1.jpg" alt="">
+                                                    </div>
+                                                    <ul class="tags">
+                                                        <li><a href="#">Travel</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h4 class="mt-20">
+                                                            A Discount Toner Cartridge Is
+                                                            Better Than Ever.
+                                                        </h4>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fas fa-user-alt"></span>Mark wiens</a></li>
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06 </a></li>
+                                                    </ul>
+                                                    <p class="excert">
+                                                        Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
+                                                    </p>
+                                                </div>
+                                                <div class="post-lists">
+                                                    <div class="single-post d-flex flex-row">
+                                                        <div class="thumb">
+                                                            <img src="~/Content/HomeIndexx/img/e2.jpg" alt="">
+                                                        </div>
+                                                        <div class="detail">
+                                                            <a href="image-post.html">
+                                                                <h6>
+                                                                    Help Finding Information
+                                                                    Online is so easy
+                                                                </h6>
+                                                            </a>
+                                                            <ul class="meta">
+                                                                <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                                <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-post d-flex flex-row">
+                                                        <div class="thumb">
+                                                            <img src="~/Content/HomeIndexx/img/e3.jpg" alt="">
+                                                        </div>
+                                                        <div class="detail">
+                                                            <a href="image-post.html">
+                                                                <h6>
+                                                                    Compatible Inkjet Cartr
+                                                                    world famous
+                                                                </h6>
+                                                            </a>
+                                                            <ul class="meta">
+                                                                <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                                <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-post d-flex flex-row">
+                                                        <div class="thumb">
+                                                            <img src="~/Content/HomeIndexx/img/e4.jpg" alt="">
+                                                        </div>
+                                                        <div class="detail">
+                                                            <a href="image-post.html">
+                                                                <h6>
+                                                                    5 Tips For Offshore Soft
+                                                                    Development
+                                                                </h6>
+                                                            </a>
+                                                            <ul class="meta">
+                                                                <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                                <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single-sidebar-widget ads-widget">
+                                            <img class="img-fluid" src="img/sidebar-ads.jpg" alt="">
+                                        </div>
+                                        <div class="single-sidebar-widget newsletter-widget">
+                                            <h6 class="title">Newsletter</h6>
+                                            <p>
+                                                Here, I focus on a range of items
+                                                andfeatures that we use in life without
+                                                giving them a second thought.
+                                            </p>
+                                            <div class="form-group d-flex flex-row">
+                                                <div class="col-autos">
+                                                    <div class="input-group">
+                                                        <input class="form-control" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" type="text">
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="bbtns">Subcribe</a>
+                                            </div>
+                                            <p>
+                                                You can unsubscribe us at any time
+                                            </p>
+                                        </div>
+                                        <div class="single-sidebar-widget most-popular-widget">
+                                            <h6 class="title">Most Popular</h6>
+                                            <div class="single-list flex-row d-flex">
+                                                <div class="thumb">
+                                                    <img src="~/Content/HomeIndexx/img/m1.jpg" alt="">
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h6>
+                                                            Help Finding Information
+                                                            Online is so easy
+                                                        </h6>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="single-list flex-row d-flex">
+                                                <div class="thumb">
+                                                    <img src="~/Content/HomeIndexx/img/m2.jpg" alt="">
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h6>
+                                                            Compatible Inkjet Cartr
+                                                            world famous
+                                                        </h6>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="single-list flex-row d-flex">
+                                                <div class="thumb">
+                                                    <img src="~/Content/HomeIndexx/img/m3.jpg" alt="">
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h6>
+                                                            5 Tips For Offshore Soft
+                                                            Development
+                                                        </h6>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="single-list flex-row d-flex">
+                                                <div class="thumb">
+                                                    <img src="~/Content/HomeIndexx/img/m4.jpg" alt="">
+                                                </div>
+                                                <div class="details">
+                                                    <a href="image-post.html">
+                                                        <h6>
+                                                            5 Tips For Offshore Soft
+                                                            Development
+                                                        </h6>
+                                                    </a>
+                                                    <ul class="meta">
+                                                        <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
+                                                        <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single-sidebar-widget social-network-widget">
+                                            <h6 class="title">Social Networks</h6>
+                                            <ul class="social-list">
+                                                <li class="d-flex justify-content-between align-items-center fb">
+                                                    <div class="icons d-flex flex-row align-items-center">
+                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                        <p>983 Likes</p>
+                                                    </div>
+                                                    <a href="#">Like our page</a>
+                                                </li>
+                                                <li class="d-flex justify-content-between align-items-center tw">
+                                                    <div class="icons d-flex flex-row align-items-center">
+                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                        <p>983 Followers</p>
+                                                    </div>
+                                                    <a href="#">Follow Us</a>
+                                                </li>
+                                                <li class="d-flex justify-content-between align-items-center yt">
+                                                    <div class="icons d-flex flex-row align-items-center">
+                                                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                                        <p>983 Subscriber</p>
+                                                    </div>
+                                                    <a href="#">Subscribe</a>
+                                                </li>
+                                                <li class="d-flex justify-content-between align-items-center rs">
+                                                    <div class="icons d-flex flex-row align-items-center">
+                                                        <i class="fa fa-rss" aria-hidden="true"></i>
+                                                        <p>983 Subscribe</p>
+                                                    </div>
+                                                    <a href="#">Subscribe</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
-                <div class="col-two md-four mob-full s-footer__archives">
-                    <h4>Archives</h4>
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">January 2018</a></li>
-                        <li><a href="#0">December 2017</a></li>
-                        <li><a href="#0">November 2017</a></li>
-                        <li><a href="#0">October 2017</a></li>
-                        <li><a href="#0">September 2017</a></li>
-                        <li><a href="#0">August 2017</a></li>
-                    </ul>
-                </div>
-                <div class="col-two md-four mob-full s-footer__social">
-                    <h4>Social</h4>
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">Facebook</a></li>
-                        <li><a href="#0">Instagram</a></li>
-                        <li><a href="#0">Twitter</a></li>
-                        <li><a href="#0">Pinterest</a></li>
-                        <li><a href="#0">Google+</a></li>
-                        <li><a href="#0">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div class="col-five md-full end s-footer__subscribe">
-                    <h4>Our Newsletter</h4>
-                    <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="group" novalidate="true">
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                            <input type="submit" name="subscribe" value="Send">
-                            <label for="mc-email" class="subscribe-message"></label>
-                        </form>
+
+                <footer class="footer-area section-gap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 single-footer-widget">
+                                <h4>Top Products</h4>
+                                <ul>
+                                    <li><a href="#">Managed Website</a></li>
+                                    <li><a href="#">Manage Reputation</a></li>
+                                    <li><a href="#">Power Tools</a></li>
+                                    <li><a href="#">Marketing Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-6 single-footer-widget">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Brand Assets</a></li>
+                                    <li><a href="#">Investor Relations</a></li>
+                                    <li><a href="#">Terms of Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-6 single-footer-widget">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Brand Assets</a></li>
+                                    <li><a href="#">Investor Relations</a></li>
+                                    <li><a href="#">Terms of Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-6 single-footer-widget">
+                                <h4>Resources</h4>
+                                <ul>
+                                    <li><a href="#">Guides</a></li>
+                                    <li><a href="#">Research</a></li>
+                                    <li><a href="#">Experts</a></li>
+                                    <li><a href="#">Agencies</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-6 single-footer-widget">
+                                <h4>Instragram Feed</h4>
+                                <ul class="instafeed d-flex flex-wrap">
+                                    <li><img src="img/i1.jpg" alt=""></li>
+                                    <li><img src="img/i2.jpg" alt=""></li>
+                                    <li><img src="img/i3.jpg" alt=""></li>
+                                    <li><img src="img/i4.jpg" alt=""></li>
+                                    <li><img src="img/i5.jpg" alt=""></li>
+                                    <li><img src="img/i6.jpg" alt=""></li>
+                                    <li><img src="img/i7.jpg" alt=""></li>
+                                    <li><img src="img/i8.jpg" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom row align-items-center">
+                            <p class="footer-text m-0 col-lg-8 col-md-12">
+                                Copyright ©
+                                <script>document.write(new Date().getFullYear());</script>2023 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </p>
+                            <div class="col-lg-4 col-md-12 footer-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-behance"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="col-full">
-                    <div class="s-footer__copyright">
-                        <span>© Copyright Philosophy 2018</span>
-                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
-                    </div>
-                    <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+                </footer>
 
-    <div id="preloader" style="display: none;">
-        <div id="loader" style="display: none;">
-            <div class="line-scale">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
+                @*<script src="~/Content/HomeIndexx/js/vendor/jquery-2.2.4.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <script src="~/Content/HomeIndexx/js/vendor/bootstrap.min.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+                <script src="~/Content/HomeIndexx/js/easing.min.js"></script>
+                <script src="~/Content/HomeIndexx/js/hoverIntent.js"></script>
+                <script src="~/Content/HomeIndexx/js/superfish.min.js"></script>
+                <script src="~/Content/HomeIndexx/js/jquery.ajaxchimp.min.js"></script>
+                <script src="~/Content/HomeIndexx/js/jquery.magnific-popup.min.js"></script>
+                <script src="~/Content/HomeIndexx/js/mn-accordion.js"></script>
+                <script src="~/Content/HomeIndexx/js/jquery-ui.js"></script>
+                <script src="~/Content/HomeIndexx/js/jquery.nice-select.min.js"></script>
+                <script src="~/Content/HomeIndexx/js/owl.carousel.min.js"></script>
+                <script src="~/Content/HomeIndexx/js/mail-script.js"></script>
+                <script src="~/Content/HomeIndexx/js/main.js"></script>*@
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+                <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); }
+                    gtag('js', new Date());
 
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+                    gtag('config', 'UA-23581568-13');
+                </script>
+                <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon="{&quot;rayId&quot;:&quot;7b28ef296be3f409&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2023.3.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
 
-        gtag('config', 'UA-23581568-13');
-    </script>
-    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon="{&quot;rayId&quot;:&quot;7affe0dfde92f3e1&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2023.3.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
-
-
-</body>
-</html>
-
-<script>
-    function Edit(id, like) {
-        $.ajax({
-            type: "POST",
-            data: { id: id, like: like },
-            url: 'Edit',
-        }).done(function (result) {
-            var html = ""
-            for (var i = 0; i < result.length; i++) {
-                html += '<tr><td>' + result[i].id + '</td><td>' + result[i].numberOfLikes + '</td><td>' + result[i].numberOfDislikes + '</td><td><button onclick="Edit(' + result[i].id + ',true)">Like</button><button onclick="Edit(' + result[i].id + ',false)">Dislike</button></td></tr>'
-            }
-            document.getElementById("s-content").innerHTML = html;
-        });
-    }
-</script>
+            </body>
+            </html>

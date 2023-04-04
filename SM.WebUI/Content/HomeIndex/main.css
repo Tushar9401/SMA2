@@ -1718,7 +1718,7 @@ input[type="button"] {
     }
 
     .header__search-form::after {
-        content: "Press Enter to begin your search.";
+      
         display: block;
         letter-spacing: 0.6px;
         font-size: 1.6rem;
@@ -1812,7 +1812,6 @@ body.search-is-visible {
         text-transform: uppercase;
         letter-spacing: 2px;
         line-height: 21px;
-        content: "Search";
         display: block;
         color: #FFFFFF;
         float: left;
