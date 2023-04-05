@@ -18,14 +18,13 @@ namespace SM.WebUI.Controllers
         {
             context = Categorycontext;
         }
-
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             List<Category> categories = context.Collection().ToList();
             return View(categories);
         }
-
+        [Authorize()]
         public ActionResult Create()
         {
             Category category = new Category();

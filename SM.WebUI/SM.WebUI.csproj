@@ -218,6 +218,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CategoryIndex.css" />
+    <Content Include="Content\HomeDetails\main.css" />
     <Content Include="Content\HomeIndexx\animate.min.css" />
     <Content Include="Content\HomeIndexx\bootstrap.css" />
     <Content Include="Content\HomeIndexx\font-awesome.min.css" />

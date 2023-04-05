@@ -57,64 +57,62 @@
             </div>
         </div>*@
 
-<body style="background-color:#656565">
-<div class="col-md-10">
+@*<body style="background-color: #777777;  font-family: Poppins, sans-serif;">
+    <div class="col-md-10" style="background-color:white">
 
 
-    <div class="col-md-12" style="width:100%; height:450px;padding:10px;margin:10px;border: solid thin black">
-        <div class="col-md-12">
-            <img class="img-responsive center-block" style="width:auto;height:250px" src="~/Content/PostImages/@Model.Post.Image" />
-        </div>
-        <hr />
-        <div class="col-md-12 text-center" style="color:white">
-            <strong>@Model.Post.Title</strong>
-        </div>
-        <div class="col-md-12" style="color:white">
-            <p>@Model.Post.Description</p>
-        </div>
-        <div class="col-md-12">
-            <a href="" class="btn btn-default">Like</a>
-        </div>
-    </div>
-
-
-    <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; border: solid thin black ">
-        <div class="card-header text-center" style="color:white;font-size:50px">
-            Post Reviews.
-        </div>
-        <div class="card-body" style="color:white;font-size:20px"">
-            @if (Model.Comments != null && Model.Comments.Count > 0)
-            {
-                foreach (var comment in Model.Comments)
-                {
-                    <p>@comment.Text</p>
-                    <small class="text-muted">
-                        Posted by @*@comment.UserID*@ on @comment.TimeStamp
-                    </small>
-
-                    <hr  style="color:black"/>
-                }
-            }
-            else
-            {
-                <p>There are No Comments on This Post.</p>
-            }
-
-        </div>
-    </div>
-    <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; border: solid thin black ">
-        <form id="commentForm">
-            <input type="text" name="PostID" value="@Model.Post.Id" />
-            <div class="form-group">
-                <label>Write your Comment</label>
-                <textarea class="form-control" rows="3" name="Text" placeholder="Write your comment"></textarea>
+        <div class="col-md-12" style="width: 100%; height: 450px; padding: 10px; margin: 10px; align-items: center;">
+            <div class="col-md-12">
+                <img class="img-responsive center-block" style="width:auto;height:250px" src="~/Content/PostImages/@Model.Post.Image" />
             </div>
-            <button class="btn btn-success" id="btnComment" type="button"> Leave Your Comment.</button>
-        </form>
-    </div>
+            <hr />
+            <div class="col-md-12" style="color:black;margin-top:20px;font-family: Poppins, sans-serif; font-size:20px;">
+                <strong style="text-align:center;">@Model.Post.Title</strong>
+            </div>
+            <div class="col-md-12" style="color: black; margin-top: 20px ;font-family: Poppins, sans-serif; font-size:20px">
+                <p>@Model.Post.Description</p>
+            </div>
+            
+        </div>
+
+        <hr style="color:black"/>
+        <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; ">
+            <div class="card-header text-center" style="color:black;font-size:50px">
+                Post Reviews.
+            </div>
+            <div class="card-body" style="color:black;font-size:20px;border:solid thin black">
+                @if (Model.Comments != null && Model.Comments.Count > 0)
+                {
+                    foreach (var comment in Model.Comments)
+                    {
+                        <p>@comment.Text</p>
+                        <small class="text-muted" style="color:black">
+                            Posted by @comment.UserID on @comment.TimeStamp
+                        </small>
+
+                        <hr style="color:black" />
+                    }
+                }
+                else
+                {
+                    <p>There are No Comments on This Post.</p>
+                }
+
+            </div>
+        </div>
+        <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; border: solid thin black ">
+            <form id="commentForm">
+                <input type="text" name="PostID" value="@Model.Post.Id" />
+                <div class="form-group">
+                    <label>Write your Comment</label>
+                    <textarea class="form-control" rows="3" name="Text" placeholder="Write your comment"></textarea>
+                </div>
+                <button class="btn btn-success" id="btnComment" type="button"> Leave Your Comment.</button>
+            </form>
+        </div>
     </div>
     <div class="col-md-12 clearfix"></div>
-    </body>
+</body>
 
     <script>
     $("#btnComment").click(function ()
@@ -154,4 +152,115 @@
             swal("Error!", "Error Occured.Please Try Again", "error")
         });
     });
-    </script>
+    </script>*@
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/linearicons.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/nice-select.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/animate.min.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/main.css">
+</head>
+<body style="display: block;">
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
+                        <ul style="margin-left:20px;">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
+                        <ul>
+                            <li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>Login In</span></a></li>
+                            <li><a href=""><span class="lnr lnr-envelope"></span><span></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="logo-wrap">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
+                        <a href="index.html">
+                            <img class="img-fluid" src="~/Content/PostImages/@Model.Post.Image" style="width: auto; height: 250px" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
+                        <img class="img-fluid" src="img/banner-ad.jpg" alt="">
+                    </div>
+                </div>
+                <center>
+                    <section class="latest-post-area pb-120" style="align-items:center;margin-left:270px">
+                        <div class="container no-padding">
+                            <div class="row">
+                                <div class="col-lg-8 post-list">
+
+                                    <div class="latest-post-wrap">
+                                        <h4 class="cat-title">@Model.Post.Title</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                        <p style="margin-right:1000px;font-size:20px">
+                            @Model.Post.Description
+                        </p>
+                    </section>
+                </center>
+                </div>
+            </div>
+</header>
+
+    <div class="site-main-container" style="width:">
+        <section class="latest-post-area pb-120">
+            <div class="container no-padding">
+                <div class="row">
+                    <div class="col-lg-8 post-list">
+
+                        <div class="latest-post-wrap">
+                            <h4 class="cat-title">Post Reviews</h4>
+                            <div class="single-latest-post row align-items-center">
+                                <centre>
+                                <div class="post-right">
+                                    @if (Model.Comments != null && Model.Comments.Count > 0)
+                                    {
+                                        foreach (var comment in Model.Comments)
+                                        {
+                                            <p>@comment.Text</p>
+                                            <small class="text-muted" style="color:black">
+                                                Posted by @comment.UserID on @comment.TimeStamp
+                                            </small>
+
+                                            <hr style="color:black" />
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p>There are No Comments on This Post.</p>
+                                    }
+
+                                </div>
+                                    </centre>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+</body>
+
+

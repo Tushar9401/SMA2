@@ -408,6 +408,27 @@ header {
     }
 }
 
+.logo-wrapp {
+    padding: 20px 0px;
+    background: #fff;
+}
+
+    .logo-wrapp .ads-banner {
+        text-align: right;
+    }
+
+@media (max-width: 767px) {
+    .logo-wrapp .ads-banner {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo-wrapp {
+        padding: 15px;
+    }
+}
+
 .main-menu {
     background: #04091e;
     padding: 15px 20px;

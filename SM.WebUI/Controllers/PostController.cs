@@ -26,7 +26,7 @@ namespace SM.WebUI.Controllers
         }
 
         //GET: ProductManager
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             //List<Post> post = context.Collection().ToList();
@@ -39,8 +39,8 @@ namespace SM.WebUI.Controllers
             model.Categories = categories;
             return View(model);
         }
-      
 
+        [Authorize()]
         public ActionResult Create()
         {
             PostManagerViewModel viewModel = new PostManagerViewModel();
