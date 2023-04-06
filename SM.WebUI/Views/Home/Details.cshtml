@@ -1,159 +1,150 @@
-﻿@model  SM.Core.ViewModel.PostViewModel.PostDetailsViewModel
+﻿
+
+@*<div class="col-md-2">
+        <img class="img-responsive" src="~/Content/PostImages/@Model.Post.Image" />
+    </div>*@
+@*<div class="col-md-10">
+        <dl class="dl-horizontal">
 
 
+            <dt>
+                @Html.DisplayNameFor(model => model.Post.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Post.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Post.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Post.Description)
+            </dd>
 
 
+            <dt></dt>
+            <dd>@Html.ActionLink("Back to List", "Index")</dd>
+        </dl>
+    </div>*@
 
-<head>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    
-</head>
-
-    @*<div class="col-md-2">
-            <img class="img-responsive" src="~/Content/PostImages/@Model.Post.Image" />
-        </div>*@
-    @*<div class="col-md-10">
-            <dl class="dl-horizontal">
+@*<div class="card col-md-10">
 
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Post.Title)
-                </dt>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Post.Title</h5>
+            <p class="card-text">@Model.Post.Description</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>*@
 
-                <dd>
-                    @Html.DisplayFor(model => model.Post.Title)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Post.Description)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Post.Description)
-                </dd>
-
-
-                <dt></dt>
-                <dd>@Html.ActionLink("Back to List", "Index")</dd>
-            </dl>
-        </div>*@
-
-    @*<div class="card col-md-10">
-
-
-            <div class="card-body">
-                <h5 class="card-title">@Model.Post.Title</h5>
-                <p class="card-text">@Model.Post.Description</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>*@
-
-    @*<div class="card mb-3" style="border:solid" >
-            <img class="img-responsive" src="~/Content/PostImages/@Model.Post.Image"  style="width:auto; height:auto;"/>
-            <div class="card-body">
-                <h5 class="card-title" style="font-size:100px">@Model.Post.Title</h5>
-                <p class="card-text">@Model.Post.Description</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>*@
+@*<div class="card mb-3" style="border:solid" >
+        <img class="img-responsive" src="~/Content/PostImages/@Model.Post.Image"  style="width:auto; height:auto;"/>
+        <div class="card-body">
+            <h5 class="card-title" style="font-size:100px">@Model.Post.Title</h5>
+            <p class="card-text">@Model.Post.Description</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>*@
 
 @*<body style="background-color: #777777;  font-family: Poppins, sans-serif;">
-    <div class="col-md-10" style="background-color:white">
+        <div class="col-md-10" style="background-color:white">
 
 
-        <div class="col-md-12" style="width: 100%; height: 450px; padding: 10px; margin: 10px; align-items: center;">
-            <div class="col-md-12">
-                <img class="img-responsive center-block" style="width:auto;height:250px" src="~/Content/PostImages/@Model.Post.Image" />
-            </div>
-            <hr />
-            <div class="col-md-12" style="color:black;margin-top:20px;font-family: Poppins, sans-serif; font-size:20px;">
-                <strong style="text-align:center;">@Model.Post.Title</strong>
-            </div>
-            <div class="col-md-12" style="color: black; margin-top: 20px ;font-family: Poppins, sans-serif; font-size:20px">
-                <p>@Model.Post.Description</p>
-            </div>
-            
-        </div>
-
-        <hr style="color:black"/>
-        <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; ">
-            <div class="card-header text-center" style="color:black;font-size:50px">
-                Post Reviews.
-            </div>
-            <div class="card-body" style="color:black;font-size:20px;border:solid thin black">
-                @if (Model.Comments != null && Model.Comments.Count > 0)
-                {
-                    foreach (var comment in Model.Comments)
-                    {
-                        <p>@comment.Text</p>
-                        <small class="text-muted" style="color:black">
-                            Posted by @comment.UserID on @comment.TimeStamp
-                        </small>
-
-                        <hr style="color:black" />
-                    }
-                }
-                else
-                {
-                    <p>There are No Comments on This Post.</p>
-                }
-
-            </div>
-        </div>
-        <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; border: solid thin black ">
-            <form id="commentForm">
-                <input type="text" name="PostID" value="@Model.Post.Id" />
-                <div class="form-group">
-                    <label>Write your Comment</label>
-                    <textarea class="form-control" rows="3" name="Text" placeholder="Write your comment"></textarea>
+            <div class="col-md-12" style="width: 100%; height: 450px; padding: 10px; margin: 10px; align-items: center;">
+                <div class="col-md-12">
+                    <img class="img-responsive center-block" style="width:auto;height:250px" src="~/Content/PostImages/@Model.Post.Image" />
                 </div>
-                <button class="btn btn-success" id="btnComment" type="button"> Leave Your Comment.</button>
-            </form>
+                <hr />
+                <div class="col-md-12" style="color:black;margin-top:20px;font-family: Poppins, sans-serif; font-size:20px;">
+                    <strong style="text-align:center;">@Model.Post.Title</strong>
+                </div>
+                <div class="col-md-12" style="color: black; margin-top: 20px ;font-family: Poppins, sans-serif; font-size:20px">
+                    <p>@Model.Post.Description</p>
+                </div>
+
+            </div>
+
+            <hr style="color:black"/>
+            <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; ">
+                <div class="card-header text-center" style="color:black;font-size:50px">
+                    Post Reviews.
+                </div>
+                <div class="card-body" style="color:black;font-size:20px;border:solid thin black">
+                    @if (Model.Comments != null && Model.Comments.Count > 0)
+                    {
+                        foreach (var comment in Model.Comments)
+                        {
+                            <p>@comment.Text</p>
+                            <small class="text-muted" style="color:black">
+                                Posted by @comment.UserID on @comment.TimeStamp
+                            </small>
+
+                            <hr style="color:black" />
+                        }
+                    }
+                    else
+                    {
+                        <p>There are No Comments on This Post.</p>
+                    }
+
+                </div>
+            </div>
+            <div class="card card-outline-secondary my-4 col-md-12" style="width: 100%; height: auto; padding: 10px; margin: 10px; border: solid thin black ">
+                <form id="commentForm">
+                    <input type="text" name="PostID" value="@Model.Post.Id" />
+                    <div class="form-group">
+                        <label>Write your Comment</label>
+                        <textarea class="form-control" rows="3" name="Text" placeholder="Write your comment"></textarea>
+                    </div>
+                    <button class="btn btn-success" id="btnComment" type="button"> Leave Your Comment.</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="col-md-12 clearfix"></div>
-</body>
+        <div class="col-md-12 clearfix"></div>
+    </body>
 
-    <script>
-    $("#btnComment").click(function ()
-    {
-        $.ajax({
-            url: "@Url.Action("LeaveComment","Home")",
-            type:"post",
-            data: $("#commentForm").serialize()
-        }).done(function (response) {
-           /* debugger;*/
-            if (response.Success) {
-                window.location.reload();
-            }
-            else {
-                swal("Error!", response.Message, "error");
-            }
-        }).fail(function () {
-            swal("Error!", "Error Occured.Please Try Again", "error")
+        <script>
+        $("#btnComment").click(function ()
+        {
+            $.ajax({
+                url: "@Url.Action("LeaveComment","Home")",
+                type:"post",
+                data: $("#commentForm").serialize()
+            }).done(function (response) {
+               /* debugger;*/
+                if (response.Success) {
+                    window.location.reload();
+                }
+                else {
+                    swal("Error!", response.Message, "error");
+                }
+            }).fail(function () {
+                swal("Error!", "Error Occured.Please Try Again", "error")
+            });
         });
-    });
 
-     $("#btnLikes").click(function ()
-    {
-        $.ajax({
-            url: "@Url.Action("LeaveComment","Home")",
-            type : "post",
-            data: $("#likesForm").serialize()
-        }).done(function (response) {
-           /* debugger;*/
-            if (response.Success) {
-                window.location.reload();
-            }
-            else {
-                swal("Error!", response.Message, "error");
-            }
-        }).fail(function () {
-            swal("Error!", "Error Occured.Please Try Again", "error")
+         $("#btnLikes").click(function ()
+        {
+            $.ajax({
+                url: "@Url.Action("LeaveComment","Home")",
+                type : "post",
+                data: $("#likesForm").serialize()
+            }).done(function (response) {
+               /* debugger;*/
+                if (response.Success) {
+                    window.location.reload();
+                }
+                else {
+                    swal("Error!", response.Message, "error");
+                }
+            }).fail(function () {
+                swal("Error!", "Error Occured.Please Try Again", "error")
+            });
         });
-    });
-    </script>*@
-
+        </script>*@
+@model  SM.Core.ViewModel.PostViewModel.PostDetailsViewModel
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/HomeIndexx/linearicons.css">
@@ -165,6 +156,10 @@
     <link rel="stylesheet" href="~/Content/HomeIndexx/owl.carousel.css">
     <link rel="stylesheet" href="~/Content/HomeIndexx/jquery-ui.css">
     <link rel="stylesheet" href="~/Content/HomeIndexx/main.css">
+    <link rel="stylesheet" href="~/Content/reviews.css" />
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 </head>
 <body style="display: block;">
     <header>
@@ -188,12 +183,15 @@
                 </div>
             </div>
         </div>
+        
         <div class="logo-wrap">
+            <center><h4 style="font-size:20px">Details Page</h4></center>
             <div class="container">
                 <div class="row justify-content-between align-items-center">
+
                     <div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
                         <a href="index.html">
-                            <img class="img-fluid" src="~/Content/PostImages/@Model.Post.Image" style="width: auto; height: 250px" alt="">
+                            <img class="img-fluid" src="~/Content/PostImages/@Model.Post.Image" style="width: auto; height: 250px;margin-top:20px" alt="">
                         </a>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
@@ -212,55 +210,111 @@
                                 </div>
                             </div>
                         </div>
-                  
+
                         <p style="margin-right:1000px;font-size:20px">
                             @Model.Post.Description
                         </p>
                     </section>
                 </center>
-                </div>
             </div>
-</header>
+        </div>
+    </header>
+    <hr style="color:red;" />
+    <div class="logo-wrap">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
 
-    <div class="site-main-container" style="width:">
-        <section class="latest-post-area pb-120">
-            <div class="container no-padding">
-                <div class="row">
-                    <div class="col-lg-8 post-list">
+                    @*<div class="card-body card-outline-secondary my-4" style="border:solid black thin;background-color:white">*@
 
-                        <div class="latest-post-wrap">
-                            <h4 class="cat-title">Post Reviews</h4>
-                            <div class="single-latest-post row align-items-center">
-                                <centre>
-                                <div class="post-right">
-                                    @if (Model.Comments != null && Model.Comments.Count > 0)
-                                    {
-                                        foreach (var comment in Model.Comments)
-                                        {
-                                            <p>@comment.Text</p>
-                                            <small class="text-muted" style="color:black">
-                                                Posted by @comment.UserID on @comment.TimeStamp
-                                            </small>
+                    <div class="card-header" style="font-size:50px; color:black;font-family:'Times New Roman';align-items:center;padding-top:20px">
+                        Comments
+                    </div>
 
-                                            <hr style="color:black" />
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <p>There are No Comments on This Post.</p>
-                                    }
 
-                                </div>
-                                    </centre>
+                    <hr />
 
+
+                    <div class="card-body" style="width:70%">
+                        <form id="commentForm">
+                            <input type="text" name="PostID" value="@Model.Post.Id" />
+                            <div class="form-group" style="font-size:20px">
+                                <label style="color:black;">Write your Comment</label>
+                                <textarea class="form-control col-10" rows="6" name="Text" placeholder="Write your comment" style="font-size:20px;"></textarea>
                             </div>
-                            </div>
-                        </div>
+                            <button class="btn btn-success" id="btnComment" type="button" style="width:250px;"> Leave Your Comment.</button>
+                        </form>
                     </div>
                 </div>
-            </section>
+            </div>
+            </div>
         </div>
+    <h4 style="font-size:20px; padding-top:20px"> Comment Section.</h4>
+            @if (Model.Comments != null && Model.Comments.Count > 0)
+            {
+                foreach (var comment in Model.Comments)
+                {
+                    @*<p>@comment.Text</p>
+                <small class="" style="color:black">
+                    Posted by @comment.UserID on @comment.TimeStamp
+                </small>
 
+                        <hr style="color:white" />*@
+                    <div class="spr-content" style="padding-top:10px">
+                        <div class="spr-form">
+                            <form class="new-review-form">
+                            </form>
+                        </div>
+
+                        <div class="spr-reviews">
+                            <div class="spr-review">
+                                <div class="spr-review-header">
+
+                                    <h3 class="spr-review-header-title">@comment.Text</h3>
+                                    <span class="spr-review-header-byline"><strong>@comment.TimeStamp</strong></span>
+                                </div> <!-- /.spr-review-header -->
+
+                                @*<div class="spr-review-content">
+                                    <p class="spr-review-content-body">@comment.Text</p>
+                                </div>*@ <!-- /.spr-review-content -->
+
+                                <div class="spr-review-footer">
+                                    <a href="#" class="spr-review-reportreview">Report as Inappropriate</a>
+                                </div> <!-- /.spr-review-footer -->
+                            </div> <!-- /.spr-review -->
+                        </div> <!-- /.spr-reviews -->
+
+                    </div> <!-- /.spr-content -->
+
+                    <!-- /.spr-container -->
+                }
+            }
+            else
+            {
+                <p>There are No Comments on This Post.</p>
+            }            
 </body>
+
+
+  <script>
+        $("#btnComment").click(function ()
+        {
+            $.ajax({
+                url: "@Url.Action("LeaveComment","Home")",
+                type:"post",
+                data: $("#commentForm").serialize()
+            }).done(function (response) {
+               /* debugger;*/
+                if (response.Success) {
+                    window.location.reload();
+                }
+                else {
+                    swal("Error!", response.Message, "error");
+                }
+            }).fail(function () {
+                swal("Error!", "Error Occured.Please Try Again", "error")
+            });
+        });
+</script>
 
 
