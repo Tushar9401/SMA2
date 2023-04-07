@@ -23,5 +23,7 @@ namespace SM.Core.Models
 
         public int NumberOfLikes { get; set; }
 
+        public string Pick { get; set; }
+
     }
 }

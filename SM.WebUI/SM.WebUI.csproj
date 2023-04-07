@@ -218,6 +218,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CategoryIndex.css" />
+    <Content Include="Content\HomeDetails\comment.css" />
     <Content Include="Content\HomeDetails\main.css" />
     <Content Include="Content\HomeIndexx\animate.min.css" />
     <Content Include="Content\HomeIndexx\bootstrap.css" />
@@ -268,6 +269,7 @@
     <Content Include="Content\PostIndex\owl.carousel.min.css" />
     <Content Include="Content\PostIndex\owl.theme.default.min.css" />
     <Content Include="Content\PostIndex\style.css" />
+    <Content Include="Content\reviews.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

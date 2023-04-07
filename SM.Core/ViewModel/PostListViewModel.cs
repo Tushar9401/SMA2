@@ -12,6 +12,8 @@ namespace SM.Core.ViewModel
         public IEnumerable<Post> Posts { get; set; }
         public IEnumerable<Category> Categories { get; set; }
 
+        public IEnumerable<Comment> Comments { get; set; }
+
        
     }
 }

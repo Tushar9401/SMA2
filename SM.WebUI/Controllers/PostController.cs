@@ -103,39 +103,55 @@ namespace SM.WebUI.Controllers
         //        return View(viewModel);
         //    }
         //}
+        public ActionResult Edit(string Id)
+        {
+            Post product = context.Find(Id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                PostManagerViewModel viewModel = new PostManagerViewModel();
+                viewModel.Post = product;
+                viewModel.Post.Category = product.Category;
 
-        //[HttpPost]
-        //public ActionResult Edit(Post post, string Id, HttpPostedFileBase file)
-        //{
-        //    Post postToEdit = context.Find(Id);
+                return View(viewModel);
+            }
+        }
 
-        //    if (postToEdit == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    else
-        //    {
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return View(post);
-        //        }
+        [HttpPost]
+        public ActionResult Edit(Post post, string Id, HttpPostedFileBase file)
+        {
+            Post postToEdit = context.Find(Id);
 
-        //        if (file != null)
-        //        {
-        //            postToEdit.Image = postToEdit.Id + Path.GetExtension(file.FileName);
-        //            file.SaveAs(Server.MapPath("//Content//ProductImages//") + postToEdit.Image);
-        //        }
+            if (postToEdit == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(post);
+                }
+
+                if (file != null)
+                {
+                    postToEdit.Image = postToEdit.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//PostImages//") + postToEdit.Image);
+                }
 
 
-        //        postToEdit.Description = post.Description;
-        //        postToEdit.Title = post.Title;
-        //        postToEdit.Category = post.Category;
+                postToEdit.Description = post.Description;
+                postToEdit.Title = post.Title;
+                postToEdit.Category = post.Category;
 
-        //        context.Commit();
+                context.Commit();
 
-        //        return RedirectToAction("Index");
-        //    }
-        //}
+                return RedirectToAction("Index");
+            }
+        }
         public ActionResult Delete(string ID)
         {
             Post postToDelete = context.Find(ID);

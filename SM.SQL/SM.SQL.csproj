@@ -80,6 +80,10 @@
     <Compile Include="Migrations\202304030617407_Likeee.designer.cs">
       <DependentUpon>202304030617407_Likeee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304071137272_Picks.cs" />
+    <Compile Include="Migrations\202304071137272_Picks.designer.cs">
+      <DependentUpon>202304071137272_Picks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304030617407_Likeee.resx">
       <DependentUpon>202304030617407_Likeee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304071137272_Picks.resx">
+      <DependentUpon>202304071137272_Picks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

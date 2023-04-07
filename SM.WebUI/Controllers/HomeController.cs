@@ -72,7 +72,7 @@ namespace SM.WebUI.Controllers
             context.Commit();
             return context.Collection().ToList();
         }
-
+        [HttpGet]
         public ActionResult Details(string Id)
         {
            

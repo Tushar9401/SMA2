@@ -20,3 +20,4 @@ C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.Ca
 C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.Likess.resources
 C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.AddLikeComments.resources
 C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.Likeee.resources
+C:\Users\TusharThakkar\source\repos\Social\SM.SQL\obj\Debug\SM.SQL.Migrations.Picks.resources

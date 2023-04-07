@@ -171,7 +171,7 @@
              float: left;
 
              margin-right:2px;">
-            <a href="@Html.ActionLink("LoginIN","Login","Account")">Login In</a>
+            <a href="@Html.ActionLink("LoginIN", "Login", "Account")">Login In</a>
         </div>
             <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
             <nav class="header__nav-wrap">
@@ -753,7 +753,7 @@
                                 <li><a href="#">Food Habit</a></li>
                             </ul>
                             <a href="image-post.html">
-                                <h3>A Discount Toner Cartridge Is Better Than Everrrr.</h3>
+                                <h3>@Html.ActionLink("Tea is a Cure", "Details", new { id = "f4fff185-b300-4a1d-a910-3b9d886d4700"},new { style = "color: white;" }) </h3>
                             </a>
                             <ul class="meta">
                                 <li><a href="#"><span class="fa fa-thumbs-up" style="padding:4px"></span>Like</a></li>
@@ -770,10 +770,10 @@
                             </div>
                             <div class="top-post-details">
                                 <ul class="tags">
-                                    <li><a href="#">Food Habit</a></li>
+                                    <li><a href="#">Nature</a></li>
                                 </ul>
                                 <a href="image-post.html">
-                                    <h4>A Discount Toner Cartridge Is Better Than Ever.</h4>
+                                    <h4>@Html.ActionLink("Nature!", "Details", new { id = "962173f2-00dc-47e5-a55e-0068510822a9" }, new { style = "color: white;" }).</h4>
                                 </a>
                                 <ul class="meta">
 
@@ -823,9 +823,9 @@
                             <h4 class="cat-title">Latest News</h4>
 
                             @foreach (var item in Model.Posts)
-                            {
-                                if (item.Category == "Watches")
-                                {
+                                        {
+                                            if (item.Category == "Latest")
+                                            {
                                     <div class="single-latest-post row align-items-center">
                                         <div class="col-lg-5 post-left">
                                             <div class="feature-img relative">
@@ -869,8 +869,8 @@
 
                             @foreach (var item in Model.Posts)
                             {
-                                if (item.Category == "Clothes")
-                                {
+                                    if (item.Category == "Popular")
+                                    {
                                     <div class="single-latest-post row align-items-center">
                                         <div class="col-lg-5 post-left">
                                             <div class="feature-img relative">
@@ -907,8 +907,8 @@
                             <h4 class="title">Relavent Stories</h4>
                             @foreach (var item in Model.Posts)
                             {
-                                if (item.Category == "Clothes")
-                                {
+                                    if (item.Category == "Relevant")
+                                    {
                                     <div class="relavent-story-list-wrap">
                                         <div class="single-relavent-post row align-items-center">
                                             <div class="col-lg-5 post-left">
@@ -975,11 +975,47 @@
                                         </p>
                                     </div>
                                     <div class="post-lists">
-                                        <div class="single-post d-flex flex-row">
-                                            <div class="thumb">
-                                                <img src="~/Content/HomeIndexx/img/e2.jpg" alt="">
+                                        @foreach (var item in Model.Posts)
+                                        {
+                                            if (item.Pick == "Editor")
+                                            {
+                                                <div class="single-post d-flex flex-row">
+                                                    <div class="thumb">
+                                                        <img src="~/Content/PostImages/@item.Image" alt="">
+                                                    </div>
+                                                    <div class="detail">
+                                                        <a href="image-post.html">
+                                                            <h6>
+                                                                @Html.ActionLink((string)item.Title, "Details", new { id = "item.Id" }, new { style = "color: black;" })
+                                                            </h6>
+                                                        </a>
+                                                        <ul class="meta">
+                                                            <li><a href="#" onclick="Edit('@item.Id',true)"><span class="fa fa-thumbs-o-up">@item.NumberOfLikes</span> Likes</a></li>
+                                                            <li><span class="far fa-comment-dots"></span><strong>@Html.ActionLink("Comments", "Details", new { id = item.Id })</strong></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+
                                             </div>
-                                            <div class="detail">
+                                </div>
+                            </div>
+                            <div class="single-sidebar-widget ads-widget">
+                                <img class="img-fluid" src="img/sidebar-ads.jpg" alt="">
+                            </div>
+                          
+                            <div class="single-sidebar-widget most-popular-widget">
+                                <h6 class="title">Most Popular</h6>
+                                @foreach (var item in Model.Posts)
+                                {
+                                    if (item.Pick == "Populars")
+                                    {
+                                        <div class="single-list flex-row d-flex">
+                                            <div class="thumb">
+                                                <img src="~/Content/PostImages/@item.Image" alt="">
+                                            </div>
+                                            <div class="details">
                                                 <a href="image-post.html">
                                                     <h6>
                                                         Help Finding Information
@@ -992,136 +1028,9 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="single-post d-flex flex-row">
-                                            <div class="thumb">
-                                                <img src="~/Content/HomeIndexx/img/e3.jpg" alt="">
-                                            </div>
-                                            <div class="detail">
-                                                <a href="image-post.html">
-                                                    <h6>
-                                                        Compatible Inkjet Cartr
-                                                        world famous
-                                                    </h6>
-                                                </a>
-                                                <ul class="meta">
-                                                    <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
-                                                    <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="single-post d-flex flex-row">
-                                            <div class="thumb">
-                                                <img src="~/Content/HomeIndexx/img/e4.jpg" alt="">
-                                            </div>
-                                            <div class="detail">
-                                                <a href="image-post.html">
-                                                    <h6>
-                                                        5 Tips For Offshore Soft
-                                                        Development
-                                                    </h6>
-                                                </a>
-                                                <ul class="meta">
-                                                    <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
-                                                    <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    }
+                                }
                                     </div>
-                                </div>
-                            </div>
-                            <div class="single-sidebar-widget ads-widget">
-                                <img class="img-fluid" src="img/sidebar-ads.jpg" alt="">
-                            </div>
-                            <div class="single-sidebar-widget newsletter-widget">
-                                <h6 class="title">Newsletter</h6>
-                                <p>
-                                    Here, I focus on a range of items
-                                    andfeatures that we use in life without
-                                    giving them a second thought.
-                                </p>
-                                <div class="form-group d-flex flex-row">
-                                    <div class="col-autos">
-                                        <div class="input-group">
-                                            <input class="form-control" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" type="text">
-                                        </div>
-                                    </div>
-                                    <a href="#" class="bbtns">Subcribe</a>
-                                </div>
-                                <p>
-                                    You can unsubscribe us at any time
-                                </p>
-                            </div>
-                            <div class="single-sidebar-widget most-popular-widget">
-                                <h6 class="title">Most Popular</h6>
-                                <div class="single-list flex-row d-flex">
-                                    <div class="thumb">
-                                        <img src="~/Content/HomeIndexx/img/m1.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <a href="image-post.html">
-                                            <h6>
-                                                Help Finding Information
-                                                Online is so easy
-                                            </h6>
-                                        </a>
-                                        <ul class="meta">
-                                            <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
-                                            <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-list flex-row d-flex">
-                                    <div class="thumb">
-                                        <img src="~/Content/HomeIndexx/img/m2.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <a href="image-post.html">
-                                            <h6>
-                                                Compatible Inkjet Cartr
-                                                world famous
-                                            </h6>
-                                        </a>
-                                        <ul class="meta">
-                                            <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
-                                            <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-list flex-row d-flex">
-                                    <div class="thumb">
-                                        <img src="~/Content/HomeIndexx/img/m3.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <a href="image-post.html">
-                                            <h6>
-                                                5 Tips For Offshore Soft
-                                                Development
-                                            </h6>
-                                        </a>
-                                        <ul class="meta">
-                                            <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
-                                            <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-list flex-row d-flex">
-                                    <div class="thumb">
-                                        <img src="~/Content/HomeIndexx/img/m4.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <a href="image-post.html">
-                                            <h6>
-                                                5 Tips For Offshore Soft
-                                                Development
-                                            </h6>
-                                        </a>
-                                        <ul class="meta">
-                                            <li><a href="#"><span class="fa fa-calendar"></span>03 April, 2018</a></li>
-                                            <li><a href="#"><span class="far fa-comment-dots"></span>06</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="single-sidebar-widget social-network-widget">
                                 <h6 class="title">Social Networks</h6>
                                 <ul class="social-list">
@@ -1273,5 +1182,13 @@
             }
             document.getElementsByClassName("s-content").innerHTML = html;
         });
+    }
+
+    function open() {
+        $.ajax({
+            type: "get",
+            data: { id: 'f4fff185-b300-4a1d-a910-3b9d886d4700' },
+            url: '/Home/Details'
+        }).document.getElementsByClassName
     }
 </script>

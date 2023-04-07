@@ -8,18 +8,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/linearicons.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/nice-select.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/animate.min.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/HomeIndexx/main.css">
+    <script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/fa7eb95c/www-widgetapi.vflset/www-widgetapi.js" async=""></script>
+    <script defer="" referrerpolicy="origin" src="/cdn-cgi/zaraz/s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyTWFnYXppbmUlMjIlMkMlMjJ4JTIyJTNBMC4xNzg1MjAzNTQxMDU3ODYyNiUyQyUyMnclMjIlM0ExOTIwJTJDJTIyaCUyMiUzQTEwODAlMkMlMjJqJTIyJTNBOTM3JTJDJTIyZSUyMiUzQTE5MjAlMkMlMjJsJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZwcmV2aWV3LmNvbG9ybGliLmNvbSUyRnRoZW1lJTJGbWFnYXppbmUlMkYlMjIlMkMlMjJyJTIyJTNBJTIyJTIyJTJDJTIyayUyMiUzQTI0JTJDJTIybiUyMiUzQSUyMlVURi04JTIyJTJDJTIybyUyMiUzQS0zMzAlMkMlMjJxJTIyJTNBJTVCJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIwJTIyJTJDJTIyVSUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMSUyMiUyQyUyMkElMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjIlMjIlMkMlMjItJTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIzJTIyJTJDJTIyMiUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyNCUyMiUyQyUyMjMlMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjUlMjIlMkMlMjI1JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjI2JTIyJTJDJTIyOCUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyNyUyMiUyQyUyMjElMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjglMjIlMkMlMjI1JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjI5JTIyJTJDJTIyNiUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMTAlMjIlMkMlMjI4JTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTJDJTdCJTIybSUyMiUzQSUyMnNldCUyMiUyQyUyMmElMjIlM0ElNUIlMjIxMSUyMiUyQyUyMi0lMjIlMkMlN0IlMjJzY29wZSUyMiUzQSUyMnBhZ2UlMjIlN0QlNUQlN0QlMkMlN0IlMjJtJTIyJTNBJTIyc2V0JTIyJTJDJTIyYSUyMiUzQSU1QiUyMjEyJTIyJTJDJTIyMSUyMiUyQyU3QiUyMnNjb3BlJTIyJTNBJTIycGFnZSUyMiU3RCU1RCU3RCUyQyU3QiUyMm0lMjIlM0ElMjJzZXQlMjIlMkMlMjJhJTIyJTNBJTVCJTIyMTMlMjIlMkMlMjIzJTIyJTJDJTdCJTIyc2NvcGUlMjIlM0ElMjJwYWdlJTIyJTdEJTVEJTdEJTVEJTdE"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9"></script>
+    <script src="//www.youtube.com/iframe_api"></script>
+    <script nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/52/6/common.js" nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/52/6/util.js" nonce="6a8cdca2-f1b9-48af-8c0c-091bc8a13ca9"></script>
 
 </head>
 
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
+                    <ul style="margin-left:20px;">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
+                    <ul>
+                        <li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>Login In</span></a></li>
+                        <li><a href=""><span class="lnr lnr-envelope"></span><span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo-wrap">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
+                    <a href="index.html">
+                        <img class="img-fluid" src="~/Content/HomeIndexx/img/af0941ba06185e9846af909ba9350baf--letter-b-logo-b-logo-design.jpg" style="width:100px;" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
+                    <img class="img-fluid" src="img/banner-ad.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <h2>Admin Pages</h2>
+    @*Copy from Here*@
+    @*Copy from Here*@
+
+    <div class="container main-menu" id="main-menu">
+        <button type="button" id="mobile-nav-toggle"><i class="lnr lnr-menu"></i><span class="menu-title">Menu</span> </button>
+        <div class="row align-items-center justify-content-between">
+            <nav id="nav-menu-container">
+                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    <li class="menu-active"><a href="/Home/Index">Home</a></li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                    }
+                    <li><a href="/Post/Create">New Post</a></li>
+                    <li><a href="/Category/Create">New Category</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-right">
+                <form class="Search">
+                    <input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
+                    <label for="Search-box" class="Search-box-label">
+                        <span class="lnr lnr-magnifier"></span>
+                    </label>
+                    <span class="Search-close">
+                        <span class="lnr lnr-cross"></span>
+                    </span>
+                </form>
+            </div>
+        </div>
+        <nav id="mobile-nav">
+            <ul class="" style="touch-action: pan-y;" id="">
+                <li class="menu-active"><a href="index.html">Home</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="category.html">Category</a></li>
+                <li class="menu-has-children">
+                    <i class="lnr lnr-chevron-down"></i><a href="" class="sf-with-ul">Post Types</a>
+                    <ul style="display: none;">
+                        <li><a href="standard-post.html">Standard Post</a></li>
+                        <li><a href="image-post.html">Image Post</a></li>
+                        <li><a href="gallery-post.html">Gallery Post</a></li>
+                        <li><a href="video-post.html">Video Post</a></li>
+                        <li><a href="audio-post.html">Audio Post</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav><div id="mobile-body-overly"></div>
+    </div>
+</header>
+
+
+    <h2 style="color:black;">Admin Pages</h2>
 
     <div class="col-md-6">
-        <h4>Product Management</h4>
+        <h4>Post Management</h4>
+        <div class="list-group">
+            @Html.ActionLink("Post", "Index", "Post", null, new { @class = "list-group-item" })
+        </div>
+
+        <h4>Category Management</h4>
         <div class="list-group">
             @Html.ActionLink("Categories", "Index", "Category", null, new { @class = "list-group-item" })
-            @Html.ActionLink("Post", "Index", "Post", null, new { @class = "list-group-item" })
         </div>
     </div>
 
